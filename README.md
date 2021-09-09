@@ -14,7 +14,7 @@ The group members working on the project are:
 | Project Element  | Tool Name | Contributors |
 |------------------|-----------|--------------|
 | Face Recognition | OpenCV    | NA           |
-| GUI              | PyQt5     |              |
+| GUI              | PyQt5     | Abhigyan, Ajay             |
 | Database         | MySQL     |              |
 
 ## Usage
