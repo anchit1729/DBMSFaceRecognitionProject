@@ -15,7 +15,7 @@ The group members working on the project are:
 |------------------|-----------|--------------|
 | Face Recognition | OpenCV    | NA           |
 | GUI              | PyQt5     | Abhigyan, Ajay             |
-| Database         | MySQL     |              |
+| Database         | MySQL     | Anchit             |
 
 ## Usage
 
