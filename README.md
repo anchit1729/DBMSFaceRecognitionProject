@@ -14,8 +14,8 @@ The group members working on the project are:
 | Project Element  | Tool Name | Contributors |
 |------------------|-----------|--------------|
 | Face Recognition | OpenCV    | NA           |
-| GUI              | HTML/CSS/JavaScript     | Abhigyan, Ajay             |
-| Database         | MySQL     | Anchit, Raghav, Kritik             |
+| GUI              | HTML/CSS/JavaScript     | Anchit            |
+| Database         | MySQL     | Anchit, Raghav           |
 
 ## Usage
 
