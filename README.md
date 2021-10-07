@@ -15,7 +15,7 @@ The group members working on the project are:
 |------------------|-----------|--------------|
 | Face Recognition | OpenCV    | NA           |
 | GUI              | HTML/CSS/JavaScript     | Anchit            |
-| Database         | MySQL     | Anchit, Raghav           |
+| Database         | MySQL     | Anchit, Kritik          |
 
 ## Usage
 
