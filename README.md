@@ -14,8 +14,8 @@ The group members working on the project are:
 | Project Element  | Tool Name | Contributors |
 |------------------|-----------|--------------|
 | Face Recognition | OpenCV    | NA           |
-| GUI              | Python (PyQT)    | Anchit            |
-| Database         | MySQL     | Anchit, Kritik, Raghav         |
+| GUI              | Python (PyQT)    | Anchit, Raghav, Kritik            |
+| Database         | MySQL     | Anchit, Raghav         |
 
 ## Usage
 
