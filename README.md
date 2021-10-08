@@ -4,10 +4,10 @@ This is the codebase for the COMP3278 DBMS group project. The application being 
 
 The group members working on the project are:
 - Anchit Mishra
+- Raghav Agarwal
+- Kritik Satija
 - Ajayveer Singh
 - Abhigyan Kashyap
-- Kritik Satija
-- Raghav Agarwal
 
 ## Platforms being used
 
