@@ -1,24 +1,10 @@
-# DBMSFaceRecognitionProject
+# Face Recognition
 
-This is the codebase for the COMP3278 DBMS group project. The application being developed is a face-recognition login service that provides access to customers' bank account information upon successful login.
+Face recognition using python and mysql.
 
-The group members working on the project are:
-- Anchit Mishra
-- Raghav Agarwal
-- Kritik Satija
-- Ajayveer Singh
-- Abhigyan Kashyap
+*******
 
-## Platforms being used
-
-| Project Element  | Tool Name | Contributors |
-|------------------|-----------|--------------|
-| Face Recognition | OpenCV    | NA           |
-| GUI              | Python (PyQT)    | Abhigyan, Raghav           |
-| Database         | MySQL     | Anchit       |
-| GUI-DB Connections | Python |  |
-
-## Usage
+## Useage
 
 ### Environment
 
@@ -120,3 +106,4 @@ python faces_gui.py
 
 The camera will be activated and recognize your face using the pretrained model.    
 **You need to** implement other useful functions in this part.
+
