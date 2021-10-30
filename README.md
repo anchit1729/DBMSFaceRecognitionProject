@@ -14,9 +14,9 @@ The group members working on the project are:
 | Project Element  | Tool Name | Contributors |
 |------------------|-----------|--------------|
 | Face Recognition | OpenCV    | NA           |
-| GUI              | Python (PyQT)    | Abhigyan, Ajay           |
+| GUI              | Python (PyQT)    | Abhigyan, Ajay, Raghav           |
 | Database         | MySQL     | Anchit       |
-| GUI-DB Connections | Python | Raghav, Kritik |
+| GUI-DB Connections | Python |  |
 
 ## Usage
 
