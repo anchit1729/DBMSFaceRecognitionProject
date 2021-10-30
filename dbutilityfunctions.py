@@ -129,6 +129,15 @@ class Account:
         print(f'Owner Name: {self.owner_name}')
         print(f'Account Balance: {self.currency} {self.balance}')
         print(f'Account Currency: {self.currency}')
+        if self.account_type == 'Savings':
+            print(f'Account Type: Savings')
+            print(f'Interest Rate: {self.interest_rate}')
+        else:
+            print(f'Account Type: Current')
+            print(f'Overdraft Limit: {self.overdraft_limit}')
+            print(f'Overdraft Used: {self.overdraft_used}')
+            print(f'Overdraft Remaining: {self.overdraft_limit - self.overdraft_used}')
+            print(f'Overdraft Due Date: {self.overdraft_due_date}')
         print(f'Opening Date: {self.opening_date}')
         self.branch.print_branch()
         print(f'Last Updated: {self.last_updated}')
