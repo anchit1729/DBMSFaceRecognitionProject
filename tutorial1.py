@@ -44,6 +44,7 @@ class WelcomeScreen(QDialog):
             self.error.setText("Incorrect Password!!!!")
         else:
             customer = Customer(u)
+            banker = customer.banker
             self.error.setText("Logged In")
             print("Loggedin")
             self.loggedin = LoginScreen()
@@ -55,8 +56,16 @@ class WelcomeScreen(QDialog):
             self.loggedin.phone.setText("Phone: "+customer.contact_no_1)
             self.loggedin.latestlogin.setText(f"Last login: {customer.last_login}")
             self.loggedin.Custogreeting.setText(f"Welcome back, {customer.salutation}. {customer.last_name}!")
+            
+            self.loggedin.banker_name.setText("Name: "+banker.first_name+" "+banker.last_name)
+            self.loggedin.banker_branch.setText("Branch: "+banker.branch.address)
+            self.loggedin.banker_office.setText("Email ID: "+banker.email)
+            self.loggedin.banker_phone.setText("Phone Number: "+banker.contact_no)
+            self.loggedin.banker_experience.setText(f"Experience: {banker.years_of_experience} year(s)")
+            
             self.loggedin.tableWidget.setRowCount(len(customer.account_list))
             self.loggedin.tableWidget.setEditTriggers(QtWidgets.QTableWidget.NoEditTriggers)
+            
             tablerow = 0
             for account in customer.account_list:
                 self.loggedin.tableWidget.setItem(tablerow, 0, QtWidgets.QTableWidgetItem(account.account_summary[0]))
