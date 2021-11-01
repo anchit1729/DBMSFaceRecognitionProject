@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="68530535-d220-4f1e-9fdb-33e5111edee8" name="Default Changelist" comment="Changed DB schema to make balance a floating-point value">
+    <list default="true" id="68530535-d220-4f1e-9fdb-33e5111edee8" name="Default Changelist" comment="Introduced Banker.years_of_experience derived attribute">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dbutilityfunctions.py" beforeDir="false" afterPath="$PROJECT_DIR$/dbutilityfunctions.py" afterDir="false" />
     </list>
@@ -143,7 +143,14 @@
       <option name="project" value="LOCAL" />
       <updated>1635773449310</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Introduced Banker.years_of_experience derived attribute">
+      <created>1635774414231</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1635774414231</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -161,6 +168,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added initial data dump file" />
     <MESSAGE value="Changed DB schema to make balance a floating-point value" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changed DB schema to make balance a floating-point value" />
+    <MESSAGE value="Introduced Banker.years_of_experience derived attribute" />
+    <option name="LAST_COMMIT_MESSAGE" value="Introduced Banker.years_of_experience derived attribute" />
   </component>
 </project>
