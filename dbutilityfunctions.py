@@ -248,7 +248,7 @@ def validate_login(login_id, password):
     if len(result) == 1:
         # Query executed successfully
         # Check if number of entries for the customer is equal to 10
-        mycursor.execute('select * from LoginHistory where customer_id = %s', (result[0][0]))
+        mycursor.execute('select * from LoginHistory where customer_id = %s', (result[0][0],))
         list_of_entries = mycursor.fetchall()
         # if len(list_of_entries) >= 10:
             # If so, then delete the oldest one
