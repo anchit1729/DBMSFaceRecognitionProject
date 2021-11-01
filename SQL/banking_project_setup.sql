@@ -74,7 +74,7 @@ CREATE TABLE Account
 (
   account_id CHAR(10) NOT NULL,
   customer_id CHAR(10) NOT NULL,
-  account_balance INT NOT NULL,
+  account_balance FLOAT NOT NULL,
   account_currency CHAR(3) NOT NULL check (account_currency IN ('HKD','USD','GBP')),
   opening_date DATE NOT NULL,
   branch_id VARCHAR(5) NOT NULL,

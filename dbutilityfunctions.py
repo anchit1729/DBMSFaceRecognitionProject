@@ -8,7 +8,7 @@ from email.mime.text import MIMEText
 mydb = mysql.connector.connect(
     host='localhost',
     user='root',
-    password='Champu2k',
+    password='root1234',
     database='banking_application'
 )
 
@@ -122,6 +122,7 @@ class Account:
             self.overdraft_limit = response[0][1]
             self.overdraft_used = response[0][2]
             self.overdraft_due_date = response[0][3]
+        self.account_summary = [self.account_id, self.account_type, self.currency, self.balance]
 
     def print_account(self):
         print('----------------------------------------------------------------------------------------------------')
@@ -224,13 +225,16 @@ class Banker:
         self.date_of_joining = response[0][5]
         self.contact_no = response[0][6]
         self.email = response[0][7]
+        self.years_of_experience = round((datetime.now().date() - self.date_of_joining).days / 365)
 
     def print_banker(self):
+        experience = datetime.now().date() - self.date_of_joining
         print('----------------------------------------------------------------------------------------------------')
         print(f'Banker ID: {self.banker_id}')
         print(f'Banker Name: {self.first_name} {self.last_name}')
         print(f'Date of Birth: {self.date_of_birth}')
         print(f'Date of Joining: {self.date_of_joining}')
+        print(f'Years of Experience: {self.years_of_experience}')
         self.branch.print_branch()
         print('----------------------------------------------------------------------------------------------------')
 
@@ -243,6 +247,12 @@ def validate_login(login_id, password):
     result = mycursor.fetchall()
     if len(result) == 1:
         # Query executed successfully
+        # Check if number of entries for the customer is equal to 10
+        #mycursor.execute('select * from LoginHistory where customer_id = %s', (result[0][0]))
+        #list_of_entries = mycursor.fetchall()
+        #if len(list_of_entries) >= 10:
+            # If so, then delete the oldest one
+            #mycursor.execute('delete from LoginHistory where customer_id = %s and last_login in (select min(last_login) from LoginHistory where customer_id = %s)', (result[0][0], result[0][0]))
         # Update the login times table by adding the current timestamp
         timestamp = datetime.now()
         mycursor.execute('insert into LoginHistory (customer_id, last_login) values (%s, %s)',
