@@ -11,7 +11,7 @@ def faces():
     import sys
 
     # 1 Create database connection
-    myconn = mysql.connector.connect(host="localhost", user="root", passwd="Raghav@2001", database="facerecognition")
+    myconn = mysql.connector.connect(host="localhost", user="root", passwd="Raghav@2001", database="banking_application")
     date = datetime.utcnow()
     now = datetime.now()
     current_time = now.strftime("%H:%M:%S")
@@ -64,7 +64,7 @@ def faces():
                 cv2.rectangle(frame, (x, y), (x + w, y + h), (255, 0, 0), (2))
 
                 # Find the customer's information in the database.
-                select = "SELECT customer_id, name, DAY(login_date), MONTH(login_date), YEAR(login_date) FROM Customer WHERE name='%s'" % (name)
+                select = "SELECT customer_id FROM logindetails WHERE login_id='%s'" % (name)
                 name = cursor.execute(select)
                 result = cursor.fetchall()
                 # print(result)
@@ -85,13 +85,13 @@ def faces():
 
                     """
                     # Update the data in database
-                    update =  "UPDATE Customer SET login_date=%s WHERE name=%s"
-                    val = (date, current_name)
-                    cursor.execute(update, val)
-                    update = "UPDATE Customer SET login_time=%s WHERE name=%s"
-                    val = (current_time, current_name)
-                    cursor.execute(update, val)
-                    myconn.commit()
+                    # update =  "UPDATE Customer SET login_date=%s WHERE name=%s"
+                    # val = (date, current_name)
+                    # cursor.execute(update, val)
+                    # update = "UPDATE Customer SET login_time=%s WHERE name=%s"
+                    # val = (current_time, current_name)
+                    # cursor.execute(update, val)
+                    # myconn.commit()
                 
                     hello = ("Hello ", current_name, "Welcom to the iKYC System")
                     print(hello)
@@ -100,7 +100,7 @@ def faces():
                     key = cv2.waitKey(2)
                     cap.release()
                     cv2.destroyAllWindows()
-                    return [current_name, result[0][2], result[0][3], result[0][4]]
+                    return [current_name, result[0][0]]
 
 
             # 3.2 If the face is unrecognized

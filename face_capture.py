@@ -1,15 +1,16 @@
 
 
 
-import cv2
-import os
-faceCascade = cv2.CascadeClassifier('haarcascade/haarcascade_frontalface_default.xml')
 
-video_capture = cv2.VideoCapture(0)
 
 # Specify the `user_name` and `NUM_IMGS` here.
 def username(a):
-    user_name = "Jack"
+    import cv2
+    import os
+    faceCascade = cv2.CascadeClassifier('haarcascade/haarcascade_frontalface_default.xml')
+
+    video_capture = cv2.VideoCapture(0)
+    user_name = a
     NUM_IMGS = 100
     if not os.path.exists('data/{}'.format(user_name)):
         os.mkdir('data/{}'.format(user_name))

@@ -133,9 +133,9 @@ font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
     <property name="geometry">
      <rect>
       <x>390</x>
-      <y>390</y>
+      <y>385</y>
       <width>71</width>
-      <height>16</height>
+      <height>21</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -143,7 +143,7 @@ font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
 font: 10pt &quot;Tw Cen MT&quot;;</string>
     </property>
     <property name="text">
-     <string>Email-Id</string>
+     <string>Login-Id</string>
     </property>
    </widget>
    <widget class="QPushButton" name="faceid">
@@ -207,6 +207,23 @@ background-color:rgb(10, 4, 121)</string>
     </property>
     <property name="text">
      <string>REGISTER</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="error">
+    <property name="geometry">
+     <rect>
+      <x>390</x>
+      <y>580</y>
+      <width>361</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">
+font: 10pt &quot;Tw Cen MT&quot;;color:blue;</string>
+    </property>
+    <property name="text">
+     <string/>
     </property>
    </widget>
   </widget>
