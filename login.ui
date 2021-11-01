@@ -90,7 +90,7 @@ background-color:rgb(10, 4, 121)</string>
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>../../../Downloads/bestbanklogo-removebg-preview.png</pixmap>
+     <pixmap>bestbanklogo-removebg-preview.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>false</bool>

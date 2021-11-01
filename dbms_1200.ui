@@ -106,7 +106,7 @@
       <string/>
      </property>
      <property name="pixmap">
-      <pixmap>../../../Downloads/bestbanklogo-removebg-preview.png</pixmap>
+      <pixmap>bestbanklogo-removebg-preview.png</pixmap>
      </property>
      <property name="scaledContents">
       <bool>false</bool>
@@ -805,6 +805,39 @@ font: 18pt &quot;MS Shell Dlg 2&quot;;</string>
       <bool>true</bool>
      </property>
     </widget>
+    <widget class="QLabel" name="profileheading_2">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>150</y>
+       <width>151</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Noto Serif Ahom</family>
+       <pointsize>27</pointsize>
+       <weight>50</weight>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="layoutDirection">
+      <enum>Qt::RightToLeft</enum>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: white;</string>
+     </property>
+     <property name="text">
+      <string>Profile:</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
+    </widget>
     <zorder>back</zorder>
     <zorder>logo</zorder>
     <zorder>profilebg</zorder>
@@ -818,6 +851,7 @@ font: 18pt &quot;MS Shell Dlg 2&quot;;</string>
     <zorder>tableWidget</zorder>
     <zorder>Custogreeting</zorder>
     <zorder>latestlogin</zorder>
+    <zorder>profileheading_2</zorder>
    </widget>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
