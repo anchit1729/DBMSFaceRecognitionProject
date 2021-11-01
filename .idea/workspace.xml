@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="68530535-d220-4f1e-9fdb-33e5111edee8" name="Default Changelist" comment="Introduced Banker.years_of_experience derived attribute">
+    <list default="true" id="68530535-d220-4f1e-9fdb-33e5111edee8" name="Default Changelist" comment="Clear the LoginHistory database table when more than 10 records are inserted for a user">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dbutilityfunctions.py" beforeDir="false" afterPath="$PROJECT_DIR$/dbutilityfunctions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/faces.py" beforeDir="false" afterPath="$PROJECT_DIR$/faces.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,7 +36,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.dbutilityfunctions">
+  <component name="RunManager" selected="Python.tutorial1">
     <configuration name="dbutilityfunctions" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -80,8 +81,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.dbutilityfunctions" />
         <item itemvalue="Python.tutorial1" />
+        <item itemvalue="Python.dbutilityfunctions" />
       </list>
     </recent_temporary>
   </component>
@@ -150,7 +151,14 @@
       <option name="project" value="LOCAL" />
       <updated>1635774414231</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Clear the LoginHistory database table when more than 10 records are inserted for a user">
+      <created>1635775077253</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1635775077253</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -169,6 +177,7 @@
     <MESSAGE value="Added initial data dump file" />
     <MESSAGE value="Changed DB schema to make balance a floating-point value" />
     <MESSAGE value="Introduced Banker.years_of_experience derived attribute" />
-    <option name="LAST_COMMIT_MESSAGE" value="Introduced Banker.years_of_experience derived attribute" />
+    <MESSAGE value="Clear the LoginHistory database table when more than 10 records are inserted for a user" />
+    <option name="LAST_COMMIT_MESSAGE" value="Clear the LoginHistory database table when more than 10 records are inserted for a user" />
   </component>
 </project>

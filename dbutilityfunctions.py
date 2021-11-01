@@ -8,7 +8,7 @@ from email.mime.text import MIMEText
 mydb = mysql.connector.connect(
     host='localhost',
     user='root',
-    password='Raghav@2001',
+    password='Champu2k',
     database='banking_application'
 )
 
@@ -250,9 +250,9 @@ def validate_login(login_id, password):
         # Check if number of entries for the customer is equal to 10
         mycursor.execute('select * from LoginHistory where customer_id = %s', (result[0][0]))
         list_of_entries = mycursor.fetchall()
-        if len(list_of_entries) >= 10:
+        # if len(list_of_entries) >= 10:
             # If so, then delete the oldest one
-            mycursor.execute('delete from LoginHistory where customer_id = %s and last_login in (select min(last_login) from LoginHistory where customer_id = %s)', (result[0][0], result[0][0]))
+            # mycursor.execute('delete from LoginHistory where customer_id = %s and last_login in (select min(last_login) from LoginHistory where customer_id = %s)', (result[0][0], result[0][0]))
         # Update the login times table by adding the current timestamp
         timestamp = datetime.now()
         mycursor.execute('insert into LoginHistory (customer_id, last_login) values (%s, %s)',
