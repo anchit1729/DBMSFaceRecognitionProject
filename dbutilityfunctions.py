@@ -225,13 +225,16 @@ class Banker:
         self.date_of_joining = response[0][5]
         self.contact_no = response[0][6]
         self.email = response[0][7]
+        self.years_of_experience = round((datetime.now().date() - self.date_of_joining).days / 365)
 
     def print_banker(self):
+        experience = datetime.now().date() - self.date_of_joining
         print('----------------------------------------------------------------------------------------------------')
         print(f'Banker ID: {self.banker_id}')
         print(f'Banker Name: {self.first_name} {self.last_name}')
         print(f'Date of Birth: {self.date_of_birth}')
         print(f'Date of Joining: {self.date_of_joining}')
+        print(f'Years of Experience: {self.years_of_experience}')
         self.branch.print_branch()
         print('----------------------------------------------------------------------------------------------------')
 

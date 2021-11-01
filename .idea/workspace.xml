@@ -1,18 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="68530535-d220-4f1e-9fdb-33e5111edee8" name="Default Changelist" comment="Added initial data dump file">
+    <list default="true" id="68530535-d220-4f1e-9fdb-33e5111edee8" name="Default Changelist" comment="Changed DB schema to make balance a floating-point value">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SQL/banking_project_setup.sql" beforeDir="false" afterPath="$PROJECT_DIR$/SQL/banking_project_setup.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI Files/accountDetails.ui" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI Files/accountDetails2.ui" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI Files/accountsPage.ui" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI Files/consolidated.ui" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI Files/dbms_draft1.ui" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI Files/mainmenu.ui" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dbutilityfunctions.py" beforeDir="false" afterPath="$PROJECT_DIR$/dbutilityfunctions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/faces.py" beforeDir="false" afterPath="$PROJECT_DIR$/faces.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logged_in" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,7 +35,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.tutorial1">
+  <component name="RunManager" selected="Python.dbutilityfunctions">
     <configuration name="dbutilityfunctions" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -89,8 +80,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.tutorial1" />
         <item itemvalue="Python.dbutilityfunctions" />
+        <item itemvalue="Python.tutorial1" />
       </list>
     </recent_temporary>
   </component>
@@ -145,7 +136,14 @@
       <option name="project" value="LOCAL" />
       <updated>1635578768179</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Changed DB schema to make balance a floating-point value">
+      <created>1635773449310</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1635773449310</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -162,6 +160,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added initial data dump file" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added initial data dump file" />
+    <MESSAGE value="Changed DB schema to make balance a floating-point value" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changed DB schema to make balance a floating-point value" />
   </component>
 </project>
