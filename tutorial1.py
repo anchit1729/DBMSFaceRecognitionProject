@@ -1,11 +1,13 @@
 import sys
 from PyQt5.uic import loadUi
 from PyQt5 import QtWidgets
-from PyQt5.QtWidgets import QDialog, QApplication, QStackedWidget, QWidget
+from PyQt5.QtWidgets import QDialog, QApplication, QMainWindow, QStackedWidget, QWidget
 import face_capture as fc
 import train as tr
 import faces as fa
 import dbutilityfunctions as du
+from dbutilityfunctions import Account, Banker, Customer, Transaction, Branch
+
 class WelcomeScreen(QDialog):
     def __init__(self):
         super(WelcomeScreen, self).__init__()
@@ -41,8 +43,36 @@ class WelcomeScreen(QDialog):
         elif(not t_value):
             self.error.setText("Incorrect Password!!!!")
         else:
+            customer = Customer(u)
             self.error.setText("Logged In")
             print("Loggedin")
+            self.loggedin = LoginScreen()
+            widget.addWidget(self.loggedin)
+            widget.setCurrentIndex(widget.currentIndex()+1)
+            self.loggedin.name.setText("Name: "+customer.first_name+" "+customer.last_name)
+            self.loggedin.address.setText("Address: "+customer.address+" "+customer.address_city)
+            self.loggedin.office.setText("Email-Id: "+customer.email)
+            self.loggedin.phone.setText("Phone: "+customer.contact_no_1)
+            self.loggedin.latestlogin.setText(f"Last login: {customer.last_login}")
+            self.loggedin.Custogreeting.setText(f"Welcome back, {customer.salutation}. {customer.last_name}!")
+            self.loggedin.tableWidget.setRowCount(len(customer.account_list))
+            tablerow = 0
+            for account in customer.account_list:
+                self.loggedin.tableWidget.setItem(tablerow, 0, QtWidgets.QTableWidgetItem(account.account_summary[0]))
+                self.loggedin.tableWidget.setItem(tablerow, 1, QtWidgets.QTableWidgetItem(account.account_summary[1]))
+                self.loggedin.tableWidget.setItem(tablerow, 2, QtWidgets.QTableWidgetItem(account.account_summary[2]))
+                self.loggedin.tableWidget.setItem(tablerow, 3, QtWidgets.QTableWidgetItem(account.account_summary[3]))
+                tablerow+=1
+
+
+class LoginScreen(QMainWindow):
+    def __init__(self):
+        super(LoginScreen, self).__init__()
+        loadUi("dbms_1200.ui", self)
+        
+
+        
+        
         
         
 

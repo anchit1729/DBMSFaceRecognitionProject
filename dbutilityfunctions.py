@@ -122,6 +122,7 @@ class Account:
             self.overdraft_limit = response[0][1]
             self.overdraft_used = response[0][2]
             self.overdraft_due_date = response[0][3]
+        self.account_summary = (self.account_id, self.account_type, self.currency, self.balance)
 
     def print_account(self):
         print('----------------------------------------------------------------------------------------------------')
