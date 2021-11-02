@@ -148,7 +148,7 @@ border-radius:20px;</string>
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QLabel" name="transaction_details">
+   <widget class="QLabel" name="transactionDetails">
     <property name="geometry">
      <rect>
       <x>50</x>
@@ -179,7 +179,7 @@ font-size: 20px;</string>
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QLabel" name="transaction_type">
+   <widget class="QLabel" name="transactionType">
     <property name="geometry">
      <rect>
       <x>50</x>
@@ -210,7 +210,7 @@ font-size: 20px;</string>
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QLabel" name="transaction_id">
+   <widget class="QLabel" name="transactionID">
     <property name="geometry">
      <rect>
       <x>50</x>
@@ -241,7 +241,7 @@ font-size: 20px;</string>
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QLabel" name="account_id">
+   <widget class="QLabel" name="accountID">
     <property name="geometry">
      <rect>
       <x>50</x>
@@ -272,7 +272,7 @@ font-size: 20px;</string>
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QPushButton" name="back">
     <property name="geometry">
      <rect>
       <x>20</x>
@@ -449,12 +449,12 @@ border-radius:10px;</string>
    <zorder>background_3</zorder>
    <zorder>label_3</zorder>
    <zorder>label_2</zorder>
-   <zorder>transaction_type</zorder>
-   <zorder>transaction_id</zorder>
-   <zorder>account_id</zorder>
+   <zorder>transactionType</zorder>
+   <zorder>transactionID</zorder>
+   <zorder>accountID</zorder>
    <zorder>loginlogheading_2</zorder>
-   <zorder>transaction_details</zorder>
-   <zorder>pushButton</zorder>
+   <zorder>transactionDetails</zorder>
+   <zorder>back</zorder>
    <zorder>remarks</zorder>
    <zorder>amount</zorder>
    <zorder>currency</zorder>

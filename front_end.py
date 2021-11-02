@@ -115,6 +115,7 @@ class AccountDetails(QMainWindow):
         for account in customer.account_list:
             if account.account_id == self.account_id:
                 self.target_account = account
+                break
     
         self.branchName.setText(f"Branch: {self.target_account.branch.address}")
         self.accountNumber.setText(f"Account No.: {self.target_account.account_id}")
@@ -133,8 +134,59 @@ class AccountDetails(QMainWindow):
             self.transactionTable.setItem(tablerow, 4, QtWidgets.QTableWidgetItem(f"{transaction.currency}{transaction.amount}"))
             self.transactionTable.setItem(tablerow, 5, QtWidgets.QTableWidgetItem(transaction.transaction_type))
             tablerow += 1
+            
+        self.transactionTable.itemClicked.connect(self.handle_transaction_clicked)
+            
+    def handle_transaction_clicked(self, table_item):
+        row_count = self.transactionTable.rowCount()
+        
+        for row in range(row_count):
+            if table_item.text() == self.transactionTable.item(row, 0).text():
+                self.go_to_transaction_details(table_item.text())
+                
+
+    def go_to_transaction_details(self, transaction_id):
+        self.transaction_details_screen = TransactionDetails(self.customer, self.account_id, transaction_id)
 
     def back_to_dashboard(self):
+        widget.removeWidget(self)
+
+class TransactionDetails(QMainWindow):
+    def __init__(self, customer, account_id, transaction_id):
+        super(TransactionDetails, self).__init__()
+        loadUi("UI/TransactionDetails.ui", self)
+        
+        widget.addWidget(self)
+        widget.setCurrentIndex(widget.currentIndex() + 1)
+        
+        self.back.clicked.connect(self.back_to_account_details)
+        self.account_id = account_id
+        self.transaction_id = transaction_id
+        self.customer = customer
+        
+        self.target_account = None
+        self.target_transaction = None
+        
+        for account in customer.account_list:
+            if account.account_id == self.account_id:
+                self.target_account = account
+                break
+        
+        for transaction in self.target_account.transaction_list:
+            if transaction.transaction_id == self.transaction_id:
+                self.target_transaction = transaction
+                break
+    
+        self.transactionID.setText(f"Transaction ID: {self.transaction_id}")
+        self.accountID.setText(f"Account No.: {self.account_id}")
+        self.transactionDetails.setText(f"Transaction Details: {self.target_transaction.transaction_details}")
+        self.transactionType.setText(f"Transaction Type: {self.target_transaction.transaction_type}")
+        self.amount.setText(f"Amount: {self.target_transaction.amount}")
+        self.currency.setText(f"Currency: {self.target_transaction.currency}")
+        self.time.setText(f"Time: {self.target_transaction.date_time}")
+        self.remarks.setText(f"Remarks: {self.target_transaction.remarks}")
+
+    def back_to_account_details(self):
         widget.removeWidget(self)
 
 
