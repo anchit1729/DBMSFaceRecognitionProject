@@ -62,7 +62,7 @@ class Dashboard(QMainWindow):
         self.email_id.setText(f"Email-Id: {customer.email}")
         self.phone.setText(f"Phone: {customer.contact_no_1}")
         self.latest_login.setText(f"Last login: {customer.last_login}")
-        self.greeting.setText(f"Welcome back, {customer.salutation}. {customer.last_name}!")
+        self.greeting.setText(f"Welcome back, {customer.first_name}!")
         self.banker_name.setText(f"Name: {banker.first_name} {banker.last_name}")
         self.banker_branch.setText(f"Branch: {banker.branch.address}")
         self.banker_office.setText(f"Email ID: {banker.email}")
@@ -81,6 +81,7 @@ class Dashboard(QMainWindow):
             table_row += 1
         
         self.account_table.itemClicked.connect(self.handle_account_clicked)
+        self.logout.clicked.connect(self.go_to_login)
 
     def handle_account_clicked(self, table_item):
         row_count = self.account_table.rowCount()
@@ -92,6 +93,9 @@ class Dashboard(QMainWindow):
 
     def go_to_account_details(self, account_id):
         self.account_details_screen = AccountDetails(self.customer, account_id)
+        
+    def go_to_login(self):
+        widget.removeWidget(self)
 
 
 class AccountDetails(QMainWindow):
@@ -123,8 +127,8 @@ class AccountDetails(QMainWindow):
         
         for transaction in self.target_account.transaction_list:
             self.transactionTable.setItem(tablerow, 0, QtWidgets.QTableWidgetItem(transaction.transaction_id))
-            self.transactionTable.setItem(tablerow, 1, QtWidgets.QTableWidgetItem(str(transaction.date_time)))
-            self.transactionTable.setItem(tablerow, 2, QtWidgets.QTableWidgetItem(str(transaction.date_time)))
+            self.transactionTable.setItem(tablerow, 1, QtWidgets.QTableWidgetItem(str(transaction.date_time.date())))
+            self.transactionTable.setItem(tablerow, 2, QtWidgets.QTableWidgetItem(str(transaction.date_time.time())))
             self.transactionTable.setItem(tablerow, 3, QtWidgets.QTableWidgetItem(transaction.transaction_details))
             self.transactionTable.setItem(tablerow, 4, QtWidgets.QTableWidgetItem(f"{transaction.currency}{transaction.amount}"))
             self.transactionTable.setItem(tablerow, 5, QtWidgets.QTableWidgetItem(transaction.transaction_type))
