@@ -1,12 +1,15 @@
 import sys
 from PyQt5.uic import loadUi
 from PyQt5 import QtWidgets
-from PyQt5.QtWidgets import QDialog, QApplication, QMainWindow, QStackedWidget, QWidget
+from PyQt5.QtWidgets import QDialog, QApplication, QFileDialog, QMainWindow, QStackedWidget, QWidget
 import face_capture as fc
 import train as tr
 import faces as fa
 import dbutils as du
 from dbutils import Account, Banker, Customer, Transaction, Branch
+import fpdf
+
+
 
 
 class LoginScreen(QDialog):
@@ -158,8 +161,10 @@ class TransactionDetails(QMainWindow):
         
         widget.addWidget(self)
         widget.setCurrentIndex(widget.currentIndex() + 1)
+        self.file_password.setEchoMode(QtWidgets.QLineEdit.Password)
         
         self.back.clicked.connect(self.back_to_account_details)
+        self.download_pdf.clicked.connect(self.pdfExport)
         self.account_id = account_id
         self.transaction_id = transaction_id
         self.customer = customer
@@ -188,6 +193,44 @@ class TransactionDetails(QMainWindow):
 
     def back_to_account_details(self):
         widget.removeWidget(self)
+
+    def pdfExport(self):
+        if(len(self.file_password.text())==0):
+            self.file_error.setText("Please enter password!!")
+        else:
+            pdf = fpdf.FPDF(format='letter') #pdf format
+            pdf.add_page() #create new page
+            pdf.set_font("Arial", size=12) # font and textsize
+
+            pdf.image("Images/bestbanklogo.jpg", x=pdf.w/3, y=0, w=pdf.w/3, h=pdf.w/11 )
+            pdf.cell(200, 10, txt="", ln=1, align="L")
+            pdf.cell(200, 10, txt="", ln=2, align="L")
+            pdf.cell(200, 10, txt=f"Transaction ID: {self.transaction_id}", ln=3, align="L")
+            pdf.cell(200, 10, txt=f"Account No.: {self.account_id}", ln=4, align="L")
+            pdf.cell(200, 10, txt=f"Transaction Details: {self.target_transaction.transaction_details}", ln=5, align="L")
+            pdf.cell(200, 10, txt=f"Transaction Type: {self.target_transaction.transaction_type}", ln=6, align="L")
+            pdf.cell(200, 10, txt=f"Amount: {self.target_transaction.amount}", ln=7, align="L")
+            pdf.cell(200, 10, txt=f"Currency: {self.target_transaction.currency}", ln=8, align="L")
+            pdf.cell(200, 10, txt=f"Time: {self.target_transaction.date_time}", ln=9, align="L")
+            pdf.cell(200, 10, txt=f"Remarks: {self.target_transaction.remarks}", ln=10, align="L")
+            pdf.output("test.pdf")
+            
+            from PyPDF2 import PdfFileReader, PdfFileWriter
+            pdf_file_path = 'test.pdf'
+            pdfWriter = PdfFileWriter()
+            pdf = PdfFileReader(pdf_file_path)
+
+            for page_num in range(pdf.numPages):
+                pdfWriter.addPage(pdf.getPage(page_num))
+            
+            pdfWriter.encrypt(f"{self.file_password.text()}")
+
+            with open(f"{self.transaction_id}.pdf", "wb") as out_file:
+                    pdfWriter.write(out_file)
+                    out_file.close
+            import os
+            if os.path.exists("test.pdf"):
+                os.remove("test.pdf")
 
 
 app = QApplication(sys.argv)
