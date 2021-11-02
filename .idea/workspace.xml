@@ -3,7 +3,19 @@
   <component name="ChangeListManager">
     <list default="true" id="68530535-d220-4f1e-9fdb-33e5111edee8" name="Default Changelist" comment="Fixes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dbutilityfunctions.py" beforeDir="false" afterPath="$PROJECT_DIR$/dbutilityfunctions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bestbanklogo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bestbanklogo-removebg-preview.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bestbanklogo.JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cool-background.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dbms_1200.ui" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dbutils.py" beforeDir="false" afterPath="$PROJECT_DIR$/dbutils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/face-recognition.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/faces.py" beforeDir="false" afterPath="$PROJECT_DIR$/faces.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front_end.py" beforeDir="false" afterPath="$PROJECT_DIR$/front_end.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/image (1).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/login.ui" beforeDir="false" afterPath="$PROJECT_DIR$/UI/login.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/transactions_1200.ui" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/welcomescreen.ui" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,11 +43,13 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/SQL" />
+      <recent name="$PROJECT_DIR$/UI" />
+      <recent name="$PROJECT_DIR$/Images" />
       <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/SQL" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.tutorial1">
+  <component name="RunManager" selected="Python.front_end">
     <configuration name="dbutilityfunctions" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -49,6 +63,27 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/dbutilityfunctions.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="front_end" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="DBMSFaceRecognitionProject" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/front_end.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -80,6 +115,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.front_end" />
         <item itemvalue="Python.tutorial1" />
         <item itemvalue="Python.dbutilityfunctions" />
       </list>

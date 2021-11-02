@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1200</width>
-    <height>800</height>
+    <height>766</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -35,7 +35,7 @@
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>cool-background.png</pixmap>
+     <pixmap>../Images/background.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -56,6 +56,9 @@
     </property>
     <property name="text">
      <string>REGISTER OR LOGIN</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
     </property>
    </widget>
    <widget class="QPushButton" name="login">
@@ -90,7 +93,7 @@ background-color:rgb(10, 4, 121)</string>
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>bestbanklogo-removebg-preview.png</pixmap>
+     <pixmap>../Images/logo.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>false</bool>
@@ -164,7 +167,7 @@ border-radius:20px;</string>
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>image (1).png</normaloff>image (1).png</iconset>
+      <normaloff>../Images/face_recognition.png</normaloff>../Images/face_recognition.png</iconset>
     </property>
     <property name="iconSize">
      <size>
