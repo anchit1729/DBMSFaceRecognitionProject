@@ -11,7 +11,7 @@ from dbutils import Account, Banker, Customer, Transaction, Branch
 class WelcomeScreen(QDialog):
     def __init__(self):
         super(WelcomeScreen, self).__init__()
-        loadUi("login.ui", self)
+        loadUi("UI/Login.ui", self)
         self.faceid.clicked.connect(self.gotofaceid)
         self.register_2.clicked.connect(self.gotoregister)
         self.login.clicked.connect(self.gotologin)
@@ -89,7 +89,7 @@ class WelcomeScreen(QDialog):
 class LoginScreen(QMainWindow):
     def __init__(self):
         super(LoginScreen, self).__init__()
-        loadUi("dbms_1200.ui", self)
+        loadUi("UI/Dashboard.ui", self)
     
     def handle_account_clicked(self, tableItem):
         print(tableItem.text())
@@ -117,7 +117,7 @@ class LoginScreen(QMainWindow):
 class TransactionScreen(QMainWindow):
     def __init__(self):
         super(TransactionScreen, self).__init__()
-        loadUi("transactions_1200.ui", self)
+        loadUi("UI/TransactionView.ui", self)
         self.pushButton.clicked.connect(self.backtologin)
         
     def backtologin(self):
