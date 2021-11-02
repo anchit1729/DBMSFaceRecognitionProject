@@ -80,7 +80,7 @@
      <rect>
       <x>20</x>
       <y>110</y>
-      <width>811</width>
+      <width>1151</width>
       <height>481</height>
      </rect>
     </property>
@@ -98,9 +98,9 @@ border-radius:20px;</string>
     </property>
     <property name="geometry">
      <rect>
-      <x>410</x>
+      <x>0</x>
       <y>0</y>
-      <width>411</width>
+      <width>1201</width>
       <height>101</height>
      </rect>
     </property>
@@ -113,6 +113,9 @@ border-radius:20px;</string>
     <property name="scaledContents">
      <bool>false</bool>
     </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
    </widget>
    <widget class="QLabel" name="loginlogheading_2">
     <property name="enabled">
@@ -120,9 +123,9 @@ border-radius:20px;</string>
     </property>
     <property name="geometry">
      <rect>
-      <x>40</x>
-      <y>120</y>
-      <width>331</width>
+      <x>20</x>
+      <y>130</y>
+      <width>1151</width>
       <height>51</height>
      </rect>
     </property>
@@ -142,7 +145,7 @@ border-radius:20px;</string>
      <string>Transaction Details</string>
     </property>
     <property name="alignment">
-     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+     <set>Qt::AlignCenter</set>
     </property>
     <property name="wordWrap">
      <bool>true</bool>
@@ -151,9 +154,9 @@ border-radius:20px;</string>
    <widget class="QLabel" name="transactionDetails">
     <property name="geometry">
      <rect>
-      <x>50</x>
+      <x>178</x>
       <y>400</y>
-      <width>359</width>
+      <width>411</width>
       <height>29</height>
      </rect>
     </property>
@@ -182,9 +185,9 @@ font-size: 20px;</string>
    <widget class="QLabel" name="transactionType">
     <property name="geometry">
      <rect>
-      <x>50</x>
+      <x>178</x>
       <y>490</y>
-      <width>359</width>
+      <width>411</width>
       <height>29</height>
      </rect>
     </property>
@@ -213,9 +216,9 @@ font-size: 20px;</string>
    <widget class="QLabel" name="transactionID">
     <property name="geometry">
      <rect>
-      <x>50</x>
+      <x>178</x>
       <y>240</y>
-      <width>359</width>
+      <width>421</width>
       <height>29</height>
      </rect>
     </property>
@@ -244,9 +247,9 @@ font-size: 20px;</string>
    <widget class="QLabel" name="accountID">
     <property name="geometry">
      <rect>
-      <x>50</x>
+      <x>178</x>
       <y>320</y>
-      <width>359</width>
+      <width>391</width>
       <height>29</height>
      </rect>
     </property>
@@ -300,9 +303,9 @@ border-radius:10px;</string>
    <widget class="QLabel" name="remarks">
     <property name="geometry">
      <rect>
-      <x>520</x>
+      <x>800</x>
       <y>490</y>
-      <width>359</width>
+      <width>371</width>
       <height>29</height>
      </rect>
     </property>
@@ -331,9 +334,9 @@ font-size: 20px;</string>
    <widget class="QLabel" name="amount">
     <property name="geometry">
      <rect>
-      <x>520</x>
+      <x>798</x>
       <y>240</y>
-      <width>359</width>
+      <width>371</width>
       <height>29</height>
      </rect>
     </property>
@@ -362,9 +365,9 @@ font-size: 20px;</string>
    <widget class="QLabel" name="currency">
     <property name="geometry">
      <rect>
-      <x>520</x>
+      <x>798</x>
       <y>320</y>
-      <width>359</width>
+      <width>371</width>
       <height>29</height>
      </rect>
     </property>
@@ -393,9 +396,9 @@ font-size: 20px;</string>
    <widget class="QLabel" name="time">
     <property name="geometry">
      <rect>
-      <x>520</x>
+      <x>798</x>
       <y>400</y>
-      <width>359</width>
+      <width>371</width>
       <height>29</height>
      </rect>
     </property>
@@ -412,7 +415,7 @@ font-size: 20px;</string>
 font-size: 20px;</string>
     </property>
     <property name="text">
-     <string>Time: xyz</string>
+     <string>Time: 2020-00-00 00:00:00 </string>
     </property>
     <property name="alignment">
      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -424,7 +427,7 @@ font-size: 20px;</string>
    <widget class="QPushButton" name="email_pdf">
     <property name="geometry">
      <rect>
-      <x>360</x>
+      <x>540</x>
       <y>630</y>
       <width>131</width>
       <height>61</height>
