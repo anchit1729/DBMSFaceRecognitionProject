@@ -182,6 +182,7 @@ class Transaction:
         print(f'Amount: {self.currency} {self.amount}')
         print(f'Currency: {self.currency}')
         print(f'DateTime: {self.date_time}')
+        print(f'Remarks: {self.remarks}')
         print('----------------------------------------------------------------------------------------------------')
 
 

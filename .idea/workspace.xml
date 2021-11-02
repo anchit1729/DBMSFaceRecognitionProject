@@ -1,21 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="68530535-d220-4f1e-9fdb-33e5111edee8" name="Default Changelist" comment="Fixes">
+    <list default="true" id="68530535-d220-4f1e-9fdb-33e5111edee8" name="Default Changelist" comment="Refactored files">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bestbanklogo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bestbanklogo-removebg-preview.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bestbanklogo.JPG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cool-background.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dbms_1200.ui" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dbutils.py" beforeDir="false" afterPath="$PROJECT_DIR$/dbutils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/face-recognition.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/faces.py" beforeDir="false" afterPath="$PROJECT_DIR$/faces.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front_end.py" beforeDir="false" afterPath="$PROJECT_DIR$/front_end.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/image (1).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/login.ui" beforeDir="false" afterPath="$PROJECT_DIR$/UI/login.ui" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/transactions_1200.ui" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/welcomescreen.ui" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -200,7 +188,14 @@
       <option name="project" value="LOCAL" />
       <updated>1635775988939</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Refactored files">
+      <created>1635829670955</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1635829670955</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -221,6 +216,7 @@
     <MESSAGE value="Introduced Banker.years_of_experience derived attribute" />
     <MESSAGE value="Clear the LoginHistory database table when more than 10 records are inserted for a user" />
     <MESSAGE value="Fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixes" />
+    <MESSAGE value="Refactored files" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactored files" />
   </component>
 </project>
