@@ -145,7 +145,7 @@
       <bool>true</bool>
      </property>
     </widget>
-    <widget class="QTableWidget" name="tableWidget">
+    <widget class="QTableWidget" name="account_table">
      <property name="geometry">
       <rect>
        <x>90</x>
@@ -211,15 +211,6 @@
           </color>
          </brush>
         </colorrole>
-        <colorrole role="PlaceholderText">
-         <brush brushstyle="NoBrush">
-          <color alpha="128">
-           <red>255</red>
-           <green>255</green>
-           <blue>255</blue>
-          </color>
-         </brush>
-        </colorrole>
        </active>
        <inactive>
         <colorrole role="WindowText">
@@ -276,15 +267,6 @@
           </color>
          </brush>
         </colorrole>
-        <colorrole role="PlaceholderText">
-         <brush brushstyle="NoBrush">
-          <color alpha="128">
-           <red>255</red>
-           <green>255</green>
-           <blue>255</blue>
-          </color>
-         </brush>
-        </colorrole>
        </inactive>
        <disabled>
         <colorrole role="WindowText">
@@ -338,15 +320,6 @@
            <red>0</red>
            <green>0</green>
            <blue>0</blue>
-          </color>
-         </brush>
-        </colorrole>
-        <colorrole role="PlaceholderText">
-         <brush brushstyle="NoBrush">
-          <color alpha="128">
-           <red>255</red>
-           <green>255</green>
-           <blue>255</blue>
           </color>
          </brush>
         </colorrole>
@@ -563,7 +536,7 @@ QTableCornerButton::section {background-color: transparent;color: white;}</strin
       </property>
      </item>
     </widget>
-    <widget class="QLabel" name="loginlogheading">
+    <widget class="QLabel" name="account_table_heading">
      <property name="geometry">
       <rect>
        <x>450</x>
@@ -681,7 +654,7 @@ font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
       <bool>true</bool>
      </property>
     </widget>
-    <widget class="QLabel" name="office">
+    <widget class="QLabel" name="email_id">
      <property name="geometry">
       <rect>
        <x>50</x>
@@ -768,7 +741,7 @@ border-radius:20px;</string>
       <string/>
      </property>
     </widget>
-    <widget class="QLabel" name="Custogreeting">
+    <widget class="QLabel" name="greeting">
      <property name="geometry">
       <rect>
        <x>340</x>
@@ -800,7 +773,7 @@ font: 75 28pt &quot;MS Shell Dlg 2&quot;;</string>
       <bool>true</bool>
      </property>
     </widget>
-    <widget class="QLabel" name="latestlogin">
+    <widget class="QLabel" name="latest_login">
      <property name="geometry">
       <rect>
        <x>560</x>
@@ -1063,13 +1036,13 @@ font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
     <zorder>profileheading</zorder>
     <zorder>phone</zorder>
     <zorder>address</zorder>
-    <zorder>office</zorder>
+    <zorder>email_id</zorder>
     <zorder>name</zorder>
     <zorder>accountbg</zorder>
-    <zorder>loginlogheading</zorder>
-    <zorder>tableWidget</zorder>
-    <zorder>Custogreeting</zorder>
-    <zorder>latestlogin</zorder>
+    <zorder>account_table_heading</zorder>
+    <zorder>account_table</zorder>
+    <zorder>greeting</zorder>
+    <zorder>latest_login</zorder>
     <zorder>profilebg_2</zorder>
     <zorder>bankerheading</zorder>
     <zorder>banker_name</zorder>

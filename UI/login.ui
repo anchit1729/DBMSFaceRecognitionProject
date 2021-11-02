@@ -193,7 +193,7 @@ font: 10pt &quot;Tw Cen MT&quot;;</string>
      <string>Password</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="register_2">
+   <widget class="QPushButton" name="register_label">
     <property name="geometry">
      <rect>
       <x>300</x>

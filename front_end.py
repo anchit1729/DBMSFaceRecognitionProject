@@ -9,145 +9,133 @@ import dbutils as du
 from dbutils import Account, Banker, Customer, Transaction, Branch
 
 
-class WelcomeScreen(QDialog):
+class LoginScreen(QDialog):
     def __init__(self):
-        super(WelcomeScreen, self).__init__()
+        super(LoginScreen, self).__init__()
         loadUi("UI/Login.ui", self)
-        self.faceid.clicked.connect(self.gotofaceid)
-        self.register_2.clicked.connect(self.gotoregister)
-        self.login.clicked.connect(self.gotologin)
+        self.faceid.clicked.connect(self.go_to_faceid)
+        self.register_label.clicked.connect(self.go_to_register)
+        self.login.clicked.connect(self.go_to_dashboard)
         self.password.setEchoMode(QtWidgets.QLineEdit.Password)
-        self.loggedin = None
+        self.dashboard = None
 
-    def gotoregister(self):
-
-        t = self.user_name.text()
+    def go_to_register(self):
+        user_name = self.user_name.text()
         password = self.password.text()
-        t_value = du.validate_login(t, password)
-        if (t_value):
-            fc.username(t)
+        auth_value = du.validate_login(user_name, password)
+        if (auth_value):
+            fc.username(user_name)
             tr.training()
         else:
             self.error.setText("Invalid Login-Id or Password!!!!")
 
-    def gotofaceid(self):
-
+    def go_to_faceid(self):
         x = fa.faces()
         print(x)
 
-    def gotologin(self):
-        u = self.user_name.text()
-        p = self.password.text()
-        t_value = du.validate_login(u, p)
-        if len(u) == 0 or len(p) == 0:
-            self.error.setText("Please input all fields!!!!")
-        elif not t_value:
-            self.error.setText("Incorrect Password!!!!")
+    def go_to_dashboard(self):
+        user_name = self.user_name.text()
+        password = self.password.text()
+        auth_value = du.validate_login(user_name, password)
+        
+        if len(user_name) == 0 or len(password) == 0:
+            self.error.setText("Please input all fields!")
+        elif not auth_value:
+            self.error.setText("Incorrect Password!")
         else:
             self.error.setText("Logged In")
-            print("Logged In")
-            customer = Customer(u)
-            self.loggedin = LoginScreen(customer, customer.banker)
-            widget.addWidget(self.loggedin)
+            customer = Customer(user_name)
+            self.dashboard = Dashboard(customer, customer.banker)
+            widget.addWidget(self.dashboard)
             widget.setCurrentIndex(widget.currentIndex() + 1)
 
 
-class LoginScreen(QMainWindow):
+class Dashboard(QMainWindow):
     def __init__(self, customer, banker):
-        super(LoginScreen, self).__init__()
+        super(Dashboard, self).__init__()
         loadUi("UI/Dashboard.ui", self)
+        
         self.customer = customer
         self.banker = banker
         self.name.setText(f"Name: {customer.first_name} {customer.last_name}")
         self.address.setText(f"Address: {customer.address} {customer.address_city}")
-        self.office.setText(f"Email-Id: {customer.email}")
+        self.email_id.setText(f"Email-Id: {customer.email}")
         self.phone.setText(f"Phone: {customer.contact_no_1}")
-        self.latestlogin.setText(f"Last login: {customer.last_login}")
-        self.Custogreeting.setText(f"Welcome back, {customer.salutation}. {customer.last_name}!")
-
+        self.latest_login.setText(f"Last login: {customer.last_login}")
+        self.greeting.setText(f"Welcome back, {customer.salutation}. {customer.last_name}!")
         self.banker_name.setText(f"Name: {banker.first_name} {banker.last_name}")
         self.banker_branch.setText(f"Branch: {banker.branch.address}")
         self.banker_office.setText(f"Email ID: {banker.email}")
         self.banker_phone.setText(f"Phone Number: {banker.contact_no}")
         self.banker_experience.setText(f"Experience: {banker.years_of_experience} year(s)")
+        self.account_table.setRowCount(len(customer.account_list))
+        self.account_table.setEditTriggers(QtWidgets.QTableWidget.NoEditTriggers)
 
-        self.tableWidget.setRowCount(len(customer.account_list))
-        self.tableWidget.setEditTriggers(QtWidgets.QTableWidget.NoEditTriggers)
-
-        tablerow = 0
+        table_row = 0
+        
         for account in customer.account_list:
-            self.tableWidget.setItem(tablerow, 0, QtWidgets.QTableWidgetItem(account.account_summary[0]))
-            self.tableWidget.setItem(tablerow, 1, QtWidgets.QTableWidgetItem(account.account_summary[1]))
-            self.tableWidget.setItem(tablerow, 2, QtWidgets.QTableWidgetItem(account.account_summary[2]))
-            self.tableWidget.setItem(tablerow, 3, QtWidgets.QTableWidgetItem(str(account.account_summary[3])))
+            self.account_table.setItem(table_row, 0, QtWidgets.QTableWidgetItem(account.account_id))
+            self.account_table.setItem(table_row, 1, QtWidgets.QTableWidgetItem(account.account_type))
+            self.account_table.setItem(table_row, 2, QtWidgets.QTableWidgetItem(account.currency))
+            self.account_table.setItem(table_row, 3, QtWidgets.QTableWidgetItem(str(account.balance)))
+            table_row += 1
+        
+        self.account_table.itemClicked.connect(self.handle_account_clicked)
 
-            self.tableWidget.itemClicked.connect(self.handle_account_clicked)
-            # self.transaction_screen = TransactionScreen()
-            # widget.addWidget(self.transaction_screen)
-            # widget.setCurrentIndex(widget.currentIndex()+1)
+    def handle_account_clicked(self, table_item):
+        row_count = self.account_table.rowCount()
+        for row in range(row_count):
+            if table_item.text() == self.account_table.item(row, 0).text():
+                self.go_to_account_details(table_item.text())
 
-            # acc = Account(account.account_summary[0], u)
-            # acc.transaction_list
-
-            tablerow += 1
-
-    def handle_account_clicked(self, tableItem):
-        print(tableItem.text())
-        print(self.tableWidget.item(0, 0).text())
-        print(self.tableWidget.item(1, 0).text())
-        print(self.tableWidget.rowCount())
-        rowCount = self.tableWidget.rowCount()
-        for row in range(rowCount):
-            if tableItem.text() == self.tableWidget.item(row, 0).text():
-                self.gototransaction(tableItem.text())
-
-    def gototransaction(self, account_id):
-        self.transaction_screen = TransactionScreen(self.customer, account_id)
-        widget.addWidget(self.transaction_screen)
+    def go_to_account_details(self, account_id):
+        self.account_details_screen = AccountDetails(self.customer, account_id)
+        widget.addWidget(self.account_details_screen)
         widget.setCurrentIndex(widget.currentIndex() + 1)
-        # acc_num = self.tableWidget.itemAt(tablerow, 0)
-        # self.transaction_screen = TransactionScreen()
-        # widget.addWidget(self.transaction_screen)
-        # widget.setCurrentIndex(widget.currentIndex()+1)
-
-        # acc = Account(account.account_summary[0], u)
-        # acc.transaction_list
 
 
-class TransactionScreen(QMainWindow):
+class AccountDetails(QMainWindow):
     def __init__(self, customer, account_id):
-        super(TransactionScreen, self).__init__()
-        loadUi("UI/TransactionView.ui", self)
-        self.pushButton.clicked.connect(self.backtologin)
+        super(AccountDetails, self).__init__()
+        loadUi("UI/AccountDetails.ui", self)
+        
+        self.back.clicked.connect(self.back_to_dashboard)
         self.account_id = account_id
         self.customer = customer
+        
         target_account = None
+        
         for account in customer.account_list:
             if account.account_id == account_id:
                 target_account = account
+    
         self.branchName.setText(f"Branch: {target_account.branch.address}")
         self.accountNumber.setText(f"Account No.: {target_account.account_id}")
         self.accountType.setText(f"Account Type: {target_account.account_type}")
         self.accountBalance.setText(f"Balance: {target_account.balance} ({target_account.currency})")
+        self.transactionTable.setRowCount(len(target_account.transaction_list))
+        self.transactionTable.setEditTriggers(QtWidgets.QTableWidget.NoEditTriggers)
+        
         tablerow = 0
+        
         for transaction in target_account.transaction_list:
-            self.transactionTable.setItem(tablerow, 0, QtWidgets.QTableWidgetItem(account.account_summary[0]))
-            self.transactionTable.setItem(tablerow, 1, QtWidgets.QTableWidgetItem(account.account_summary[1]))
-            self.transactionTable.setItem(tablerow, 2, QtWidgets.QTableWidgetItem(account.account_summary[2]))
-            self.transactionTable.setItem(tablerow, 3, QtWidgets.QTableWidgetItem(str(account.account_summary[3])))
+            self.transactionTable.setItem(tablerow, 0, QtWidgets.QTableWidgetItem(transaction.transaction_id))
+            self.transactionTable.setItem(tablerow, 1, QtWidgets.QTableWidgetItem(str(transaction.date_time)))
+            self.transactionTable.setItem(tablerow, 2, QtWidgets.QTableWidgetItem(str(transaction.date_time)))
+            self.transactionTable.setItem(tablerow, 3, QtWidgets.QTableWidgetItem(transaction.transaction_details))
+            self.transactionTable.setItem(tablerow, 4, QtWidgets.QTableWidgetItem(f"{transaction.currency}{transaction.amount}"))
+            self.transactionTable.setItem(tablerow, 5, QtWidgets.QTableWidgetItem(transaction.transaction_type))
+            tablerow += 1
 
-            self.tableWidget.itemClicked.connect(self.handle_account_clicked)
-
-
-    def backtologin(self):
+    def back_to_dashboard(self):
         widget.removeWidget(self)
         widget.setCurrentIndex(widget.currentIndex() - 1)
 
 
 app = QApplication(sys.argv)
-welcome = WelcomeScreen()
+login_screen = LoginScreen()
 widget = QtWidgets.QStackedWidget()
-widget.addWidget(welcome)
+widget.addWidget(login_screen)
 widget.setFixedHeight(800)
 widget.setFixedWidth(1200)
 widget.show()
