@@ -1,6 +1,23 @@
-# Face Recognition
+# DBMS Face Recognition Project
 
-Face recognition using python and mysql.
+This is the implementation for the COMP3278 Introduction to Database Management Systems course project. It uses Python and MySQL for an eKYC Face-ID based banking application.
+
+## Group Members
+
+1. Anchit Mishra
+2. Kritik Satija
+3. Raghav Agarwal
+4. Abhigyan Kashyap
+5. Ajayveer Singh
+
+## Contributions
+
+| Component         | Tools Used | Contributor(s)           |
+|-------------------|------------|--------------------------|
+| Face-ID           | Python     | NA                       |
+| UI                | PyQT5      | Kritik, Raghav, Abhigyan |
+| Database          | MySQL      | Anchit                   |
+| DB-UI Connections | Python     | Anchit, Raghav, Kritik   | 
 
 *******
 
