@@ -72,15 +72,58 @@ class WelcomeScreen(QDialog):
                 self.loggedin.tableWidget.setItem(tablerow, 1, QtWidgets.QTableWidgetItem(account.account_summary[1]))
                 self.loggedin.tableWidget.setItem(tablerow, 2, QtWidgets.QTableWidgetItem(account.account_summary[2]))
                 self.loggedin.tableWidget.setItem(tablerow, 3, QtWidgets.QTableWidgetItem(str(account.account_summary[3])))
+                
+                self.loggedin.tableWidget.itemClicked.connect(self.loggedin.handle_account_clicked)
+                # self.transaction_screen = TransactionScreen()
+                # widget.addWidget(self.transaction_screen)
+                # widget.setCurrentIndex(widget.currentIndex()+1)
+                
+                # acc = Account(account.account_summary[0], u)
+                # acc.transaction_list
+                
                 tablerow+=1
+    
+    
 
 
 class LoginScreen(QMainWindow):
     def __init__(self):
         super(LoginScreen, self).__init__()
         loadUi("dbms_1200.ui", self)
+    
+    def handle_account_clicked(self, tableItem):
+        print(tableItem.text())
+        print(self.tableWidget.item(0, 0).text())
+        print(self.tableWidget.item(1, 0).text())
+        print(self.tableWidget.rowCount())
+        rowCount = self.tableWidget.rowCount()
+        for row in range(rowCount):
+            if tableItem.text() == self.tableWidget.item(row, 0).text():
+                self.gototransaction()
+    
+    def gototransaction(self):
+        self.transaction_screen = TransactionScreen()
+        widget.addWidget(self.transaction_screen)
+        widget.setCurrentIndex(widget.currentIndex()+1)
+        # acc_num = self.tableWidget.itemAt(tablerow, 0)
+        # self.transaction_screen = TransactionScreen()
+        # widget.addWidget(self.transaction_screen)
+        # widget.setCurrentIndex(widget.currentIndex()+1)
+                
+        # acc = Account(account.account_summary[0], u)
+        # acc.transaction_list
         
-
+        
+class TransactionScreen(QMainWindow):
+    def __init__(self):
+        super(TransactionScreen, self).__init__()
+        loadUi("transactions_1200.ui", self)
+        self.pushButton.clicked.connect(self.backtologin)
+        
+    def backtologin(self):
+        widget.removeWidget(self)
+        widget.setCurrentIndex(widget.currentIndex() - 1)
+    
         
         
         
