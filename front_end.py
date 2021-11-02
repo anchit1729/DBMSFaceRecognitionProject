@@ -46,14 +46,14 @@ class LoginScreen(QDialog):
             self.error.setText("Logged In")
             customer = Customer(user_name)
             self.dashboard = Dashboard(customer, customer.banker)
-            widget.addWidget(self.dashboard)
-            widget.setCurrentIndex(widget.currentIndex() + 1)
-
 
 class Dashboard(QMainWindow):
     def __init__(self, customer, banker):
         super(Dashboard, self).__init__()
         loadUi("UI/Dashboard.ui", self)
+        
+        widget.addWidget(self)
+        widget.setCurrentIndex(widget.currentIndex() + 1)
         
         self.customer = customer
         self.banker = banker
@@ -84,14 +84,14 @@ class Dashboard(QMainWindow):
 
     def handle_account_clicked(self, table_item):
         row_count = self.account_table.rowCount()
+        
         for row in range(row_count):
             if table_item.text() == self.account_table.item(row, 0).text():
                 self.go_to_account_details(table_item.text())
+                
 
     def go_to_account_details(self, account_id):
         self.account_details_screen = AccountDetails(self.customer, account_id)
-        widget.addWidget(self.account_details_screen)
-        widget.setCurrentIndex(widget.currentIndex() + 1)
 
 
 class AccountDetails(QMainWindow):
@@ -99,26 +99,29 @@ class AccountDetails(QMainWindow):
         super(AccountDetails, self).__init__()
         loadUi("UI/AccountDetails.ui", self)
         
+        widget.addWidget(self)
+        widget.setCurrentIndex(widget.currentIndex() + 1)
+        
         self.back.clicked.connect(self.back_to_dashboard)
         self.account_id = account_id
         self.customer = customer
         
-        target_account = None
+        self.target_account = None
         
         for account in customer.account_list:
-            if account.account_id == account_id:
-                target_account = account
+            if account.account_id == self.account_id:
+                self.target_account = account
     
-        self.branchName.setText(f"Branch: {target_account.branch.address}")
-        self.accountNumber.setText(f"Account No.: {target_account.account_id}")
-        self.accountType.setText(f"Account Type: {target_account.account_type}")
-        self.accountBalance.setText(f"Balance: {target_account.balance} ({target_account.currency})")
-        self.transactionTable.setRowCount(len(target_account.transaction_list))
+        self.branchName.setText(f"Branch: {self.target_account.branch.address}")
+        self.accountNumber.setText(f"Account No.: {self.target_account.account_id}")
+        self.accountType.setText(f"Account Type: {self.target_account.account_type}")
+        self.accountBalance.setText(f"Balance: {self.target_account.balance} ({self.target_account.currency})")
+        self.transactionTable.setRowCount(len(self.target_account.transaction_list))
         self.transactionTable.setEditTriggers(QtWidgets.QTableWidget.NoEditTriggers)
         
         tablerow = 0
         
-        for transaction in target_account.transaction_list:
+        for transaction in self.target_account.transaction_list:
             self.transactionTable.setItem(tablerow, 0, QtWidgets.QTableWidgetItem(transaction.transaction_id))
             self.transactionTable.setItem(tablerow, 1, QtWidgets.QTableWidgetItem(str(transaction.date_time)))
             self.transactionTable.setItem(tablerow, 2, QtWidgets.QTableWidgetItem(str(transaction.date_time)))
@@ -129,13 +132,13 @@ class AccountDetails(QMainWindow):
 
     def back_to_dashboard(self):
         widget.removeWidget(self)
-        widget.setCurrentIndex(widget.currentIndex() - 1)
 
 
 app = QApplication(sys.argv)
 login_screen = LoginScreen()
 widget = QtWidgets.QStackedWidget()
 widget.addWidget(login_screen)
+widget.setCurrentIndex(widget.currentIndex() + 1)
 widget.setFixedHeight(800)
 widget.setFixedWidth(1200)
 widget.show()
