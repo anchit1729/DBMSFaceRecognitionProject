@@ -5,8 +5,8 @@ from PyQt5.QtWidgets import QDialog, QApplication, QMainWindow, QStackedWidget, 
 import face_capture as fc
 import train as tr
 import faces as fa
-import dbutilityfunctions as du
-from dbutilityfunctions import Account, Banker, Customer, Transaction, Branch
+import dbutils as du
+from dbutils import Account, Banker, Customer, Transaction, Branch
 
 class WelcomeScreen(QDialog):
     def __init__(self):
