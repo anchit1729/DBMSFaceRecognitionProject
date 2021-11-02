@@ -427,10 +427,10 @@ font-size: 20px;</string>
    <widget class="QPushButton" name="email_pdf">
     <property name="geometry">
      <rect>
-      <x>380</x>
-      <y>630</y>
+      <x>720</x>
+      <y>690</y>
       <width>131</width>
-      <height>61</height>
+      <height>51</height>
      </rect>
     </property>
     <property name="font">
@@ -452,10 +452,10 @@ border-radius:10px;</string>
    <widget class="QPushButton" name="download_pdf">
     <property name="geometry">
      <rect>
-      <x>630</x>
-      <y>630</y>
+      <x>690</x>
+      <y>610</y>
       <width>191</width>
-      <height>61</height>
+      <height>51</height>
      </rect>
     </property>
     <property name="font">
@@ -477,8 +477,8 @@ border-radius:10px;</string>
    <widget class="QLineEdit" name="file_password">
     <property name="geometry">
      <rect>
-      <x>840</x>
-      <y>630</y>
+      <x>410</x>
+      <y>640</y>
       <width>251</width>
       <height>61</height>
      </rect>
@@ -500,8 +500,8 @@ QLineEdit[text=\&quot;\&quot;]{ color:gray; }</string>
    <widget class="QLabel" name="file_error">
     <property name="geometry">
      <rect>
-      <x>840</x>
-      <y>700</y>
+      <x>410</x>
+      <y>710</y>
       <width>251</width>
       <height>16</height>
      </rect>
