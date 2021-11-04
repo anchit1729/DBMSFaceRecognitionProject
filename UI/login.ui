@@ -71,10 +71,18 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">border-radius:20px;
+     <string notr="true">
+QPushButton {
+border-radius:20px;
 font: 75 18pt &quot;MS Shell Dlg 2&quot;; 
 color: rgb(255, 255, 255);
-background-color:rgb(10, 4, 121)</string>
+background-color:rgb(10, 4, 121)
+
+}
+
+QPushButton::hover {
+background-color: rgb(0, 217, 0);
+}</string>
     </property>
     <property name="text">
      <string>LOGIN</string>
@@ -109,8 +117,18 @@ background-color:rgb(10, 4, 121)</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgba(0,0,0,0);
+     <string notr="true">
+
+QLineEdit {
+background-color:rgba(0,0,0,0);
 font: 14pt &quot;MS Shell Dlg 2&quot;;
+border: 2px solid white;
+border-radius: 25px;
+}
+
+QLineEdit::focus {
+border: 2px solid rgb(0, 229, 0);
+}
 
 </string>
     </property>
@@ -128,8 +146,20 @@ font: 14pt &quot;MS Shell Dlg 2&quot;;
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgba(0,0,0,0);
-font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
+     <string notr="true">
+
+QLineEdit {
+background-color:rgba(0,0,0,0);
+font: 14pt &quot;MS Shell Dlg 2&quot;;
+border: 2px solid white;
+border-radius: 25px;
+}
+
+QLineEdit::focus {
+border: 2px solid rgb(0, 229, 0);
+}
+
+</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_3">
@@ -142,8 +172,8 @@ font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">
-font: 10pt &quot;Tw Cen MT&quot;;</string>
+     <string notr="true">color: white;
+font: 15pt &quot;Tw Cen MT&quot;;</string>
     </property>
     <property name="text">
      <string>Login-Id</string>
@@ -181,13 +211,13 @@ border-radius:20px;</string>
      <rect>
       <x>390</x>
       <y>500</y>
-      <width>71</width>
+      <width>81</width>
       <height>16</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">
-font: 10pt &quot;Tw Cen MT&quot;;</string>
+     <string notr="true">color: white;
+font: 15pt &quot;Tw Cen MT&quot;;</string>
     </property>
     <property name="text">
      <string>Password</string>
@@ -203,10 +233,18 @@ font: 10pt &quot;Tw Cen MT&quot;;</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">border-radius:20px;
+     <string notr="true">
+QPushButton {
+border-radius:20px;
 font: 75 18pt &quot;MS Shell Dlg 2&quot;; 
 color: rgb(255, 255, 255);
-background-color:rgb(10, 4, 121)</string>
+background-color:rgb(10, 4, 121)
+
+}
+
+QPushButton::hover {
+background-color: rgb(0, 217, 0);
+}</string>
     </property>
     <property name="text">
      <string>REGISTER</string>
