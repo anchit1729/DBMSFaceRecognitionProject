@@ -70,6 +70,9 @@
       <height>61</height>
      </rect>
     </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
     <property name="styleSheet">
      <string notr="true">
 QPushButton {
@@ -116,6 +119,9 @@ background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgb
       <height>51</height>
      </rect>
     </property>
+    <property name="toolTip">
+     <string extracomment="Enter your Log-in Id (username)"/>
+    </property>
     <property name="styleSheet">
      <string notr="true">
 
@@ -144,6 +150,9 @@ border: 2px solid rgb(0, 229, 0);
       <width>421</width>
       <height>51</height>
      </rect>
+    </property>
+    <property name="toolTip">
+     <string extracomment="Enter your password."/>
     </property>
     <property name="styleSheet">
      <string notr="true">
@@ -234,6 +243,9 @@ font: 15pt &quot;Tw Cen MT&quot;;</string>
       <width>301</width>
       <height>61</height>
      </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
     </property>
     <property name="styleSheet">
      <string notr="true">
