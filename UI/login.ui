@@ -76,7 +76,7 @@
     <property name="styleSheet">
      <string notr="true">
 QPushButton {
-border-radius:20px;
+border-radius:30px;
 font: 75 18pt &quot;MS Shell Dlg 2&quot;; 
 color: rgb(255, 255, 255);
 background-color:rgb(10, 4, 121)
@@ -250,7 +250,7 @@ font: 15pt &quot;Tw Cen MT&quot;;</string>
     <property name="styleSheet">
      <string notr="true">
 QPushButton {
-border-radius:20px;
+border-radius:30px;
 font: 75 18pt &quot;MS Shell Dlg 2&quot;; 
 color: rgb(255, 255, 255);
 background-color:rgb(10, 4, 121)
