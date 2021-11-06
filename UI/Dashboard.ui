@@ -378,7 +378,9 @@ background-color: rgb(0, 170, 255);
 
 QTableWidget::row::selected {
 background-color: rgb(0, 85, 255)
-}</string>
+}
+
+</string>
      </property>
      <property name="frameShape">
       <enum>QFrame::NoFrame</enum>

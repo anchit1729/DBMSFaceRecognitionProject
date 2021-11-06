@@ -13,6 +13,26 @@ import fpdf
 
 
 class LoginScreen(QDialog):
+    def fade(self, widget, duration=1000):
+        self.effect = QGraphicsOpacityEffect()
+        widget.setGraphicsEffect(self.effect)
+
+        self.animation = QtCore.QPropertyAnimation(self.effect, b"opacity")
+        self.animation.setDuration(duration)
+        self.animation.setStartValue(1)
+        self.animation.setEndValue(0)
+        self.animation.start()
+
+    def unfade(self, widget, duration=1000):
+        self.effect = QGraphicsOpacityEffect()
+        widget.setGraphicsEffect(self.effect)
+
+        self.animation = QtCore.QPropertyAnimation(self.effect, b"opacity")
+        self.animation.setDuration(duration)
+        self.animation.setStartValue(0)
+        self.animation.setEndValue(1)
+        self.animation.start()
+
     def __init__(self):
         super(LoginScreen, self).__init__()
         loadUi("UI/Login.ui", self)
@@ -21,6 +41,13 @@ class LoginScreen(QDialog):
         self.login.clicked.connect(self.go_to_dashboard)
         self.password.setEchoMode(QtWidgets.QLineEdit.Password)
         self.dashboard = None
+
+        try:
+            self.fade(LoginScreen, 0)
+            self.unfade(LoginScreen, 3000)
+        except:
+            print('Error in fading animation.')
+
 
     def go_to_register(self):
         user_name = self.user_name.text()

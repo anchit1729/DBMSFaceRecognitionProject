@@ -165,6 +165,9 @@ border-radius:20px;</string>
       <pointsize>-1</pointsize>
      </font>
     </property>
+    <property name="cursor">
+     <cursorShape>IBeamCursor</cursorShape>
+    </property>
     <property name="layoutDirection">
      <enum>Qt::RightToLeft</enum>
     </property>
@@ -181,6 +184,9 @@ font-size: 20px;</string>
     <property name="wordWrap">
      <bool>true</bool>
     </property>
+    <property name="textInteractionFlags">
+     <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByMouse</set>
+    </property>
    </widget>
    <widget class="QLabel" name="transactionType">
     <property name="geometry">
@@ -195,6 +201,9 @@ font-size: 20px;</string>
      <font>
       <pointsize>-1</pointsize>
      </font>
+    </property>
+    <property name="cursor">
+     <cursorShape>IBeamCursor</cursorShape>
     </property>
     <property name="layoutDirection">
      <enum>Qt::RightToLeft</enum>
@@ -212,6 +221,9 @@ font-size: 20px;</string>
     <property name="wordWrap">
      <bool>true</bool>
     </property>
+    <property name="textInteractionFlags">
+     <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByMouse</set>
+    </property>
    </widget>
    <widget class="QLabel" name="transactionID">
     <property name="geometry">
@@ -226,6 +238,9 @@ font-size: 20px;</string>
      <font>
       <pointsize>-1</pointsize>
      </font>
+    </property>
+    <property name="cursor">
+     <cursorShape>IBeamCursor</cursorShape>
     </property>
     <property name="layoutDirection">
      <enum>Qt::RightToLeft</enum>
@@ -243,6 +258,9 @@ font-size: 20px;</string>
     <property name="wordWrap">
      <bool>true</bool>
     </property>
+    <property name="textInteractionFlags">
+     <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByMouse</set>
+    </property>
    </widget>
    <widget class="QLabel" name="accountID">
     <property name="geometry">
@@ -257,6 +275,15 @@ font-size: 20px;</string>
      <font>
       <pointsize>-1</pointsize>
      </font>
+    </property>
+    <property name="cursor">
+     <cursorShape>IBeamCursor</cursorShape>
+    </property>
+    <property name="mouseTracking">
+     <bool>false</bool>
+    </property>
+    <property name="focusPolicy">
+     <enum>Qt::NoFocus</enum>
     </property>
     <property name="layoutDirection">
      <enum>Qt::RightToLeft</enum>
@@ -274,6 +301,9 @@ font-size: 20px;</string>
     <property name="wordWrap">
      <bool>true</bool>
     </property>
+    <property name="textInteractionFlags">
+     <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByMouse</set>
+    </property>
    </widget>
    <widget class="QPushButton" name="back">
     <property name="geometry">
@@ -290,6 +320,9 @@ font-size: 20px;</string>
       <weight>75</weight>
       <bold>true</bold>
      </font>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
     </property>
     <property name="styleSheet">
      <string notr="true">
@@ -322,6 +355,9 @@ background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgb
       <pointsize>-1</pointsize>
      </font>
     </property>
+    <property name="cursor">
+     <cursorShape>IBeamCursor</cursorShape>
+    </property>
     <property name="layoutDirection">
      <enum>Qt::RightToLeft</enum>
     </property>
@@ -338,6 +374,9 @@ font-size: 20px;</string>
     <property name="wordWrap">
      <bool>true</bool>
     </property>
+    <property name="textInteractionFlags">
+     <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByMouse</set>
+    </property>
    </widget>
    <widget class="QLabel" name="amount">
     <property name="geometry">
@@ -352,6 +391,9 @@ font-size: 20px;</string>
      <font>
       <pointsize>-1</pointsize>
      </font>
+    </property>
+    <property name="cursor">
+     <cursorShape>IBeamCursor</cursorShape>
     </property>
     <property name="layoutDirection">
      <enum>Qt::RightToLeft</enum>
@@ -369,6 +411,9 @@ font-size: 20px;</string>
     <property name="wordWrap">
      <bool>true</bool>
     </property>
+    <property name="textInteractionFlags">
+     <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByMouse</set>
+    </property>
    </widget>
    <widget class="QLabel" name="currency">
     <property name="geometry">
@@ -383,6 +428,9 @@ font-size: 20px;</string>
      <font>
       <pointsize>-1</pointsize>
      </font>
+    </property>
+    <property name="cursor">
+     <cursorShape>IBeamCursor</cursorShape>
     </property>
     <property name="layoutDirection">
      <enum>Qt::RightToLeft</enum>
@@ -400,6 +448,9 @@ font-size: 20px;</string>
     <property name="wordWrap">
      <bool>true</bool>
     </property>
+    <property name="textInteractionFlags">
+     <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByMouse</set>
+    </property>
    </widget>
    <widget class="QLabel" name="time">
     <property name="geometry">
@@ -414,6 +465,9 @@ font-size: 20px;</string>
      <font>
       <pointsize>-1</pointsize>
      </font>
+    </property>
+    <property name="cursor">
+     <cursorShape>IBeamCursor</cursorShape>
     </property>
     <property name="layoutDirection">
      <enum>Qt::RightToLeft</enum>
@@ -431,6 +485,9 @@ font-size: 20px;</string>
     <property name="wordWrap">
      <bool>true</bool>
     </property>
+    <property name="textInteractionFlags">
+     <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByMouse</set>
+    </property>
    </widget>
    <widget class="QPushButton" name="email_pdf">
     <property name="geometry">
@@ -447,6 +504,9 @@ font-size: 20px;</string>
       <weight>75</weight>
       <bold>true</bold>
      </font>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
     </property>
     <property name="styleSheet">
      <string notr="true">
@@ -480,6 +540,9 @@ background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgb
       <weight>75</weight>
       <bold>true</bold>
      </font>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
     </property>
     <property name="styleSheet">
      <string notr="true">

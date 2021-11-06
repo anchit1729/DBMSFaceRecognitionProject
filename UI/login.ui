@@ -31,6 +31,9 @@
       <height>801</height>
      </rect>
     </property>
+    <property name="inputMethodHints">
+     <set>Qt::ImhNone</set>
+    </property>
     <property name="text">
      <string/>
     </property>
@@ -128,6 +131,7 @@ background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgb
 QLineEdit {
 background-color:rgba(0,0,0,0);
 font: 14pt &quot;MS Shell Dlg 2&quot;;
+color: white;
 border: 2px solid white;
 border-radius: 25px;
 }
@@ -154,6 +158,9 @@ border: 2px solid rgb(0, 229, 0);
     <property name="toolTip">
      <string extracomment="Enter your password."/>
     </property>
+    <property name="toolTipDuration">
+     <number>1</number>
+    </property>
     <property name="styleSheet">
      <string notr="true">
 
@@ -162,6 +169,7 @@ background-color:rgba(0,0,0,0);
 font: 14pt &quot;MS Shell Dlg 2&quot;;
 border: 2px solid white;
 border-radius: 25px;
+color: white;
 }
 
 QLineEdit::focus {
@@ -169,6 +177,9 @@ border: 2px solid rgb(0, 229, 0);
 }
 
 </string>
+    </property>
+    <property name="inputMethodHints">
+     <set>Qt::ImhNone</set>
     </property>
    </widget>
    <widget class="QLabel" name="label_3">
