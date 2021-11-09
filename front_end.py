@@ -2,6 +2,7 @@ import sys
 from PyQt5.uic import loadUi
 from PyQt5 import QtWidgets
 from PyQt5.QtWidgets import QDialog, QApplication, QFileDialog, QMainWindow, QStackedWidget, QWidget
+from PyQt5.QtCore import QTime
 import face_capture as fc
 import train as tr
 import faces as fa
@@ -163,11 +164,14 @@ class AccountDetails(QMainWindow):
                 self.target_account = deepcopy(account)
                 break
         
-        day = self.day.toPlainText()
-        month = self.month.toPlainText()
-        year = self.year.toPlainText()
-        amount = self.amount.toPlainText()
+        time = self.time.time()
+        day = self.day.text()
+        month = self.month.text()
+        year = self.year.text()
+        amount = self.amount.text()
         
+        if time != QTime(0, 0):
+            self.target_account.transaction_list = [x for x in self.target_account.transaction_list if QTime(x.date_time.hour, x.date_time.minute) == time]
         if day:
             self.target_account.transaction_list = [x for x in self.target_account.transaction_list if f"{x.date_time.day:02}" == day]
         if month:
@@ -180,6 +184,8 @@ class AccountDetails(QMainWindow):
         self.repaint_table(False)
     
     def on_clear(self):
+        time = QTime(0, 0)
+        self.time.setTime(time)
         self.day.setText("")
         self.month.setText("")
         self.year.setText("")
