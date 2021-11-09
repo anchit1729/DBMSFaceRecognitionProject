@@ -7,3 +7,5 @@ Pillow
 pysimplegui
 fpdf
 PyPDF2
+PySide2
+PyQt5

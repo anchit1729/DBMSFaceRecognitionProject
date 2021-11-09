@@ -2,17 +2,39 @@ import sys
 from PyQt5.uic import loadUi
 from PyQt5 import QtWidgets
 from PyQt5.QtWidgets import QDialog, QApplication, QFileDialog, QMainWindow, QStackedWidget, QWidget
+from PyQt5.QtCore import QTime
 import face_capture as fc
 import train as tr
 import faces as fa
 import dbutils as du
 from dbutils import Account, Banker, Customer, Transaction, Branch
 import fpdf
+from copy import deepcopy 
 
 
 
 
 class LoginScreen(QDialog):
+    def fade(self, widget, duration=1000):
+        self.effect = QGraphicsOpacityEffect()
+        widget.setGraphicsEffect(self.effect)
+
+        self.animation = QtCore.QPropertyAnimation(self.effect, b"opacity")
+        self.animation.setDuration(duration)
+        self.animation.setStartValue(1)
+        self.animation.setEndValue(0)
+        self.animation.start()
+
+    def unfade(self, widget, duration=1000):
+        self.effect = QGraphicsOpacityEffect()
+        widget.setGraphicsEffect(self.effect)
+
+        self.animation = QtCore.QPropertyAnimation(self.effect, b"opacity")
+        self.animation.setDuration(duration)
+        self.animation.setStartValue(0)
+        self.animation.setEndValue(1)
+        self.animation.start()
+
     def __init__(self):
         super(LoginScreen, self).__init__()
         loadUi("UI/Login.ui", self)
@@ -21,6 +43,13 @@ class LoginScreen(QDialog):
         self.login.clicked.connect(self.go_to_dashboard)
         self.password.setEchoMode(QtWidgets.QLineEdit.Password)
         self.dashboard = None
+
+        try:
+            self.fade(LoginScreen, 0)
+            self.unfade(LoginScreen, 3000)
+        except:
+            print('Error in fading animation.')
+
 
     def go_to_register(self):
         user_name = self.user_name.text()
@@ -110,6 +139,8 @@ class AccountDetails(QMainWindow):
         widget.setCurrentIndex(widget.currentIndex() + 1)
         
         self.back.clicked.connect(self.back_to_dashboard)
+        self.search.clicked.connect(self.search_values)
+        self.clear.clicked.connect(self.on_clear)
         self.account_id = account_id
         self.customer = customer
         
@@ -117,18 +148,63 @@ class AccountDetails(QMainWindow):
         
         for account in customer.account_list:
             if account.account_id == self.account_id:
-                self.target_account = account
+                self.target_account = deepcopy(account)
                 break
     
         self.branchName.setText(f"Branch: {self.target_account.branch.address}")
         self.accountNumber.setText(f"Account No.: {self.target_account.account_id}")
         self.accountType.setText(f"Account Type: {self.target_account.account_type}")
         self.accountBalance.setText(f"Balance: {self.target_account.balance} ({self.target_account.currency})")
-        self.transactionTable.setRowCount(len(self.target_account.transaction_list))
-        self.transactionTable.setEditTriggers(QtWidgets.QTableWidget.NoEditTriggers)
+
+        self.repaint_table(False)
+    
+    def search_values(self):
+        for account in self.customer.account_list:
+            if account.account_id == self.account_id:
+                self.target_account = deepcopy(account)
+                break
+        
+        time = self.time.time()
+        day = self.day.text()
+        month = self.month.text()
+        year = self.year.text()
+        amount = self.amount.text()
+        
+        if time != QTime(0, 0):
+            self.target_account.transaction_list = [x for x in self.target_account.transaction_list if QTime(x.date_time.hour, x.date_time.minute) == time]
+        if day:
+            self.target_account.transaction_list = [x for x in self.target_account.transaction_list if f"{x.date_time.day:02}" == day]
+        if month:
+            self.target_account.transaction_list = [x for x in self.target_account.transaction_list if f"{x.date_time.month:02}" == month]
+        if year:
+            self.target_account.transaction_list = [x for x in self.target_account.transaction_list if str(x.date_time.year) == year]
+        if amount:
+            self.target_account.transaction_list = [x for x in self.target_account.transaction_list if str(x.amount) == amount]
+        
+        self.repaint_table(False)
+    
+    def on_clear(self):
+        time = QTime(0, 0)
+        self.time.setTime(time)
+        self.day.setText("")
+        self.month.setText("")
+        self.year.setText("")
+        self.amount.setText("")
+        self.repaint_table(True)
+    
+    def repaint_table(self, reset_flag):
         
         tablerow = 0
         
+        if reset_flag:
+            for account in self.customer.account_list:
+                if account.account_id == self.account_id:
+                    self.target_account = deepcopy(account)
+                    break
+            
+        self.transactionTable.setRowCount(len(self.target_account.transaction_list))
+        self.transactionTable.setEditTriggers(QtWidgets.QTableWidget.NoEditTriggers)
+            
         for transaction in self.target_account.transaction_list:
             self.transactionTable.setItem(tablerow, 0, QtWidgets.QTableWidgetItem(transaction.transaction_id))
             self.transactionTable.setItem(tablerow, 1, QtWidgets.QTableWidgetItem(str(transaction.date_time.date())))
@@ -139,7 +215,7 @@ class AccountDetails(QMainWindow):
             tablerow += 1
             
         self.transactionTable.itemClicked.connect(self.handle_transaction_clicked)
-            
+         
     def handle_transaction_clicked(self, table_item):
         row_count = self.transactionTable.rowCount()
         
@@ -175,12 +251,12 @@ class TransactionDetails(QMainWindow):
         
         for account in customer.account_list:
             if account.account_id == self.account_id:
-                self.target_account = account
+                self.target_account = deepcopy(account)
                 break
         
         for transaction in self.target_account.transaction_list:
             if transaction.transaction_id == self.transaction_id:
-                self.target_transaction = transaction
+                self.target_transaction = deepcopy(transaction)
                 break
     
         self.transactionID.setText(f"Transaction ID: {self.transaction_id}")
