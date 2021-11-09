@@ -661,7 +661,7 @@ background-color: rgb(0, 170, 255);
       <x>20</x>
       <y>110</y>
       <width>1141</width>
-      <height>631</height>
+      <height>521</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -1067,6 +1067,134 @@ background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgb
      <string>Amount</string>
     </property>
    </widget>
+   <widget class="QLineEdit" name="file_password">
+    <property name="geometry">
+     <rect>
+      <x>470</x>
+      <y>640</y>
+      <width>251</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">
+
+QLineEdit {
+background-color:rgba(0,0,0,0);
+font: 14pt &quot;MS Shell Dlg 2&quot;;
+border: 2px solid white;
+border-radius: 25px;
+color:white;
+}
+
+QLineEdit::focus {
+border: 2px solid rgb(0, 229, 0);
+}
+
+</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="placeholderText">
+     <string>              Set pdf password</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="email_pdf">
+    <property name="geometry">
+     <rect>
+      <x>650</x>
+      <y>710</y>
+      <width>160</width>
+      <height>50</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>15</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">
+QPushButton {
+background-color:qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(170, 102, 255, 255), stop:0.9999 rgba(100, 91, 255, 255), stop:1 rgba(255, 255, 255, 255));
+color:white;
+border-radius:10px;
+
+}
+
+QPushButton::hover {
+background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(0, 170, 255, 255), stop:1 rgba(0, 85, 255, 255))
+}</string>
+    </property>
+    <property name="text">
+     <string>Email pdf</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="download_pdf">
+    <property name="geometry">
+     <rect>
+      <x>400</x>
+      <y>710</y>
+      <width>160</width>
+      <height>50</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>15</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">
+QPushButton {
+background-color:qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(170, 102, 255, 255), stop:0.9999 rgba(100, 91, 255, 255), stop:1 rgba(255, 255, 255, 255));
+color:white;
+border-radius:10px;
+
+}
+
+QPushButton::hover {
+background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(0, 170, 255, 255), stop:1 rgba(0, 85, 255, 255))
+}</string>
+    </property>
+    <property name="text">
+     <string>Download pdf</string>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>16</width>
+      <height>16</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QLabel" name="file_error">
+    <property name="geometry">
+     <rect>
+      <x>750</x>
+      <y>660</y>
+      <width>251</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">
+font: 10pt &quot;Tw Cen MT&quot;;color:white;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
    <zorder>background_3</zorder>
    <zorder>label_3</zorder>
    <zorder>label_2</zorder>
@@ -1083,11 +1211,18 @@ background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgb
    <zorder>dueDate</zorder>
    <zorder>search</zorder>
    <zorder>clear</zorder>
+<<<<<<< Updated upstream
    <zorder>time</zorder>
    <zorder>day</zorder>
    <zorder>month</zorder>
    <zorder>year</zorder>
    <zorder>amount</zorder>
+=======
+   <zorder>file_password</zorder>
+   <zorder>email_pdf</zorder>
+   <zorder>download_pdf</zorder>
+   <zorder>file_error</zorder>
+>>>>>>> Stashed changes
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -1095,7 +1230,7 @@ background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgb
      <x>0</x>
      <y>0</y>
      <width>1200</width>
-     <height>24</height>
+     <height>26</height>
     </rect>
    </property>
   </widget>

@@ -10,7 +10,7 @@ import dbutils as du
 from dbutils import Account, Banker, Customer, Transaction, Branch
 import fpdf
 from copy import deepcopy 
-
+import temp as t
 
 
 
@@ -137,10 +137,12 @@ class AccountDetails(QMainWindow):
         
         widget.addWidget(self)
         widget.setCurrentIndex(widget.currentIndex() + 1)
-        
+        self.file_password.setEchoMode(QtWidgets.QLineEdit.Password)
         self.back.clicked.connect(self.back_to_dashboard)
         self.search.clicked.connect(self.search_values)
         self.clear.clicked.connect(self.on_clear)
+        self.download_pdf.clicked.connect(self.pdfDownload)
+        self.email_pdf.clicked.connect(self.pdfEmail1)
         self.account_id = account_id
         self.customer = customer
         
@@ -155,9 +157,88 @@ class AccountDetails(QMainWindow):
         self.accountNumber.setText(f"Account No.: {self.target_account.account_id}")
         self.accountType.setText(f"Account Type: {self.target_account.account_type}")
         self.accountBalance.setText(f"Balance: {self.target_account.balance} ({self.target_account.currency})")
+        
+
 
         self.repaint_table(False)
     
+
+    def pdfDownload(self):
+        
+        if(len(self.file_password.text())==0):
+            self.file_error.setText("Please enter password!!")
+        else:
+            from prettytable import PrettyTable
+
+            x = PrettyTable()
+
+            x.field_names = ["Transaction", "Date", "Time", "Description", "Amount", "Transaction Type"]
+
+            for i in self.target_account.transaction_list:
+                x.add_row([str(i.transaction_id), str(i.date_time.date()),str(i.date_time.time()), str(i.transaction_details), f"{i.currency}{i.amount}", str(i.transaction_type)])
+
+            t.pdfprint(x, self.target_account)
+            self.file_error.setText("")
+            
+            
+            from PyPDF2 import PdfFileReader, PdfFileWriter
+            pdf_file_path = 'simple_demo.pdf'
+            pdfWriter = PdfFileWriter()
+            pdf = PdfFileReader(pdf_file_path)
+
+            for page_num in range(pdf.numPages):
+                pdfWriter.addPage(pdf.getPage(page_num))
+            
+            pdfWriter.encrypt(f"{self.file_password.text()}")
+
+            with open(f"{self.target_account.account_id}.pdf", "wb") as out_file:
+                    pdfWriter.write(out_file)
+                    out_file.close
+            import os
+            if os.path.exists("simple_demo.pdf"):
+                os.remove("simple_demo.pdf")
+
+    def pdfEmail1(self):
+        
+        if(len(self.file_password.text())==0):
+            self.file_error.setText("Please enter password!!")
+        else:
+            from prettytable import PrettyTable
+
+            x = PrettyTable()
+
+            x.field_names = ["Transaction", "Date", "Time", "Description", "Amount", "Transaction Type"]
+
+            for i in self.target_account.transaction_list:
+                x.add_row([str(i.transaction_id), str(i.date_time.date()),str(i.date_time.time()), str(i.transaction_details), f"{i.currency}{i.amount}", str(i.transaction_type)])
+
+            t.pdfprint(x, self.target_account)
+
+            self.file_error.setText("")
+            
+            
+            from PyPDF2 import PdfFileReader, PdfFileWriter
+            pdf_file_path = 'simple_demo.pdf'
+            pdfWriter = PdfFileWriter()
+            pdf = PdfFileReader(pdf_file_path)
+
+            for page_num in range(pdf.numPages):
+                pdfWriter.addPage(pdf.getPage(page_num))
+            
+            pdfWriter.encrypt(f"{self.file_password.text()}")
+
+            name_file = "account_details"
+            with open(f"{name_file}.pdf", "wb") as out_file:
+                    pdfWriter.write(out_file)
+                    out_file.close
+
+            du.sendPDF(self.customer.email, f"{name_file}.pdf")
+
+            import os
+            if os.path.exists("simple_demo.pdf"):
+                os.remove("simple_demo.pdf")
+                os.remove(f"{name_file}.pdf")
+
     def search_values(self):
         for account in self.customer.account_list:
             if account.account_id == self.account_id:
