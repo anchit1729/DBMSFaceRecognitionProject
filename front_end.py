@@ -57,13 +57,18 @@ class LoginScreen(QDialog):
         password = self.password.text()
         auth_value = du.validate_login(user_name, password)
         if (auth_value):
+            self.error.setText("")
             fc.username(user_name)
             tr.training()
+            self.user_name.setText("")
+            self.password.setText("")
         else:
             self.error.setText("Invalid Login-Id or Password!!!!")
 
-    def go_to_faceid(self):
+    def go_to_faceid(self):    
         x = fa.faces()
+        customer = Customer(x[0])
+        self.dashboard = Dashboard(customer, customer.banker)
         print(x)
 
     def go_to_dashboard(self):
@@ -74,11 +79,12 @@ class LoginScreen(QDialog):
         if len(user_name) == 0 or len(password) == 0:
             self.error.setText("Please input all fields!")
         elif not auth_value:
-            self.error.setText("Incorrect Password!")
-        else:
-            self.error.setText("Logged In")
+            self.error.setText("Incorrect Login-Id or Password!")
+        else:        
             customer = Customer(user_name)
             self.dashboard = Dashboard(customer, customer.banker)
+            self.user_name.setText("")
+            self.password.setText("")
 
 class Dashboard(QMainWindow):
     def __init__(self, customer, banker):

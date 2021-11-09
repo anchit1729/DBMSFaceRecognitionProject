@@ -58,7 +58,7 @@
 </string>
     </property>
     <property name="text">
-     <string>REGISTER OR LOGIN</string>
+     <string>WELCOME!!!</string>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
@@ -209,11 +209,18 @@ font: 15pt &quot;Tw Cen MT&quot;;</string>
      </rect>
     </property>
     <property name="cursor">
-     <cursorShape>ForbiddenCursor</cursorShape>
+     <cursorShape>PointingHandCursor</cursorShape>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(10, 4, 121);
-border-radius:20px;</string>
+     <string notr="true">QPushButton {
+background-color:rgb(10, 4, 121);
+border-radius:20px;
+}
+
+
+QPushButton::hover {
+background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(79, 238, 0, 255), stop:1 rgba(0, 170, 0, 255))
+}</string>
     </property>
     <property name="text">
      <string/>
