@@ -8,7 +8,7 @@ from email.mime.text import MIMEText
 mydb = mysql.connector.connect(
     host='localhost',
     user='root',
-    password='Raghav@2001',
+    password='root1234',
     database='banking_application'
 )
 
@@ -298,7 +298,7 @@ def sendPDF(emailid, pdfname1):
     from email import encoders
 
     body = '''Hello,
-    We have attached your requested pdf in the email
+    We have attached your Transaction pdf in the email
     Best Regards,
     Best Bank
     '''
@@ -316,7 +316,7 @@ def sendPDF(emailid, pdfname1):
     message = MIMEMultipart()
     message['From'] = sender
     message['To'] = receiver
-    message['Subject'] = 'This email has an attachment, a pdf file'
+    message['Subject'] = 'This email has an attacment, a pdf file'
 
     message.attach(MIMEText(body, 'plain'))
 
