@@ -41,6 +41,7 @@ def training():
                 # Using multiscle detection
                 faces = face_cascade.detectMultiScale(image_array, scaleFactor=1.5, minNeighbors=3)
 
+                print(faces)
                 for (x, y, w, h) in faces:
                     roi = image_array[y:y+h, x:x+w]
                     x_train.append(roi)

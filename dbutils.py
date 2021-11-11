@@ -8,7 +8,7 @@ from email.mime.text import MIMEText
 mydb = mysql.connector.connect(
     host='localhost',
     user='root',
-    password='Champu2k',
+    password='root1234',
     database='banking_application'
 )
 
@@ -58,14 +58,16 @@ class Customer:
         print(f'Contact No (1): {self.contact_no_1}')
         print(f'Contact No (2): {self.contact_no_2}')
         print(f'Email: {self.email}')
-        print(f'Address: {self.address}, {self.address_city} {self.address_state} {self.address_country} {self.address_postcode}')
+        print(
+            f'Address: {self.address}, {self.address_city} {self.address_state} {self.address_country} {self.address_postcode}')
         print(f'Last Login: {self.last_login}')
         self.banker.print_banker()
         print('----------------------------------------------------------------------------------------------------')
 
     def retrieve_last_login(self):
         mycursor = mydb.cursor()
-        mycursor.execute('select max(last_login) from LoginHistory where customer_id = %s and last_login < (select max(last_login) from LoginHistory)', (self.customer_id,))
+        mycursor.execute(
+            'select max(last_login) from LoginHistory where customer_id = %s and last_login < (select max(last_login) from LoginHistory)', (self.customer_id,))
         response = mycursor.fetchall()
         if len(response) == 0 or not response:
             return 'First login'
@@ -73,7 +75,8 @@ class Customer:
 
     def print_login_history(self):
         mycursor = mydb.cursor()
-        mycursor.execute('select * from LoginHistory where customer_id = %s', (self.customer_id,))
+        mycursor.execute(
+            'select * from LoginHistory where customer_id = %s', (self.customer_id,))
         result = mycursor.fetchall()
         print('----------------------------------------------------------------------------------------------------')
         for i in range(len(result)):
@@ -82,13 +85,15 @@ class Customer:
 
     def retrieve_account_list(self):
         mycursor = mydb.cursor()
-        mycursor.execute('select account_id from Account where customer_id = %s', (self.customer_id,))
+        mycursor.execute(
+            'select account_id from Account where customer_id = %s', (self.customer_id,))
         response = mycursor.fetchall()
         account_list = []
         if len(response) == 0 or not response:
             return []
         for account_id in response:
-            new_account = Account(account_id[0], self.salutation + '. ' + self.first_name + ' ' + self.last_name)
+            new_account = Account(
+                account_id[0], self.salutation + '. ' + self.first_name + ' ' + self.last_name)
             account_list.append(new_account)
         return account_list
 
@@ -98,7 +103,8 @@ class Customer:
 class Account:
     def __init__(self, account_id, owner_name):
         mycursor = mydb.cursor()
-        mycursor.execute('select * from Account where account_id = %s', (account_id,))
+        mycursor.execute(
+            'select * from Account where account_id = %s', (account_id,))
         response = mycursor.fetchall()
         if len(response) == 0 or not response:
             exit(404)
@@ -110,19 +116,20 @@ class Account:
         self.branch = Branch(response[0][5])
         self.last_updated = response[0][6]
         self.transaction_list = self.retrieve_transaction_list()
-        mycursor.execute('select * from SavingsAccount where account_id = %s', (account_id,))
+        mycursor.execute(
+            'select * from SavingsAccount where account_id = %s', (account_id,))
         response = mycursor.fetchall()
         if response:
             self.account_type = 'Savings'
             self.interest_rate = response[0][1]
         else:
             self.account_type = 'Current'
-            mycursor.execute('select * from CurrentAccount where account_id = %s', (account_id,))
+            mycursor.execute(
+                'select * from CurrentAccount where account_id = %s', (account_id,))
             response = mycursor.fetchall()
             self.overdraft_limit = response[0][1]
             self.overdraft_used = response[0][2]
             self.overdraft_due_date = response[0][3]
-        self.account_summary = [self.account_id, self.account_type, self.currency, self.balance]
 
     def print_account(self):
         print('----------------------------------------------------------------------------------------------------')
@@ -137,7 +144,8 @@ class Account:
             print(f'Account Type: Current')
             print(f'Overdraft Limit: {self.overdraft_limit}')
             print(f'Overdraft Used: {self.overdraft_used}')
-            print(f'Overdraft Remaining: {self.overdraft_limit - self.overdraft_used}')
+            print(
+                f'Overdraft Remaining: {self.overdraft_limit - self.overdraft_used}')
             print(f'Overdraft Due Date: {self.overdraft_due_date}')
         print(f'Opening Date: {self.opening_date}')
         self.branch.print_branch()
@@ -146,7 +154,8 @@ class Account:
 
     def retrieve_transaction_list(self):
         mycursor = mydb.cursor()
-        mycursor.execute('select transaction_id from Transaction where account_id = %s', (self.account_id,))
+        mycursor.execute(
+            'select transaction_id from Transaction where account_id = %s', (self.account_id,))
         response = mycursor.fetchall()
         transaction_list = []
         if not response:
@@ -162,7 +171,8 @@ class Account:
 class Transaction:
     def __init__(self, transaction_id, account_id):
         mycursor = mydb.cursor()
-        mycursor.execute('select * from Transaction where transaction_id = %s and account_id = %s', (transaction_id, account_id))
+        mycursor.execute(
+            'select * from Transaction where transaction_id = %s and account_id = %s', (transaction_id, account_id))
         response = mycursor.fetchall()
         self.transaction_id = transaction_id
         self.account_id = account_id
@@ -182,6 +192,7 @@ class Transaction:
         print(f'Amount: {self.currency} {self.amount}')
         print(f'Currency: {self.currency}')
         print(f'DateTime: {self.date_time}')
+        print(f'Remarks: {self.remarks}')
         print('----------------------------------------------------------------------------------------------------')
 
 
@@ -190,7 +201,8 @@ class Transaction:
 class Branch:
     def __init__(self, branch_id):
         mycursor = mydb.cursor()
-        mycursor.execute('select * from Branch where branch_id = %s', (branch_id,))
+        mycursor.execute(
+            'select * from Branch where branch_id = %s', (branch_id,))
         response = mycursor.fetchall()
         if not response or len(response) == 0:
             exit(404)
@@ -204,7 +216,8 @@ class Branch:
     def print_branch(self):
         print('----------------------------------------------------------------------------------------------------')
         print(f'Branch ID: {self.branch_id}')
-        print(f'Address: {self.address}, {self.branch_city}, {self.branch_state} {self.branch_country} - {self.branch_postcode}')
+        print(
+            f'Address: {self.address}, {self.branch_city}, {self.branch_state} {self.branch_country} - {self.branch_postcode}')
         print('----------------------------------------------------------------------------------------------------')
 
 
@@ -213,7 +226,8 @@ class Branch:
 class Banker:
     def __init__(self, banker_id):
         mycursor = mydb.cursor()
-        mycursor.execute('select * from Banker where banker_id = %s', (banker_id,))
+        mycursor.execute(
+            'select * from Banker where banker_id = %s', (banker_id,))
         response = mycursor.fetchall()
         if not response or len(response) == 0:
             exit(404)
@@ -225,7 +239,8 @@ class Banker:
         self.date_of_joining = response[0][5]
         self.contact_no = response[0][6]
         self.email = response[0][7]
-        self.years_of_experience = round((datetime.now().date() - self.date_of_joining).days / 365)
+        self.years_of_experience = round(
+            (datetime.now().date() - self.date_of_joining).days / 365)
 
     def print_banker(self):
         experience = datetime.now().date() - self.date_of_joining
@@ -250,9 +265,9 @@ def validate_login(login_id, password):
         # Check if number of entries for the customer is equal to 10
         #mycursor.execute('select * from LoginHistory where customer_id = %s', (result[0][0]))
         #list_of_entries = mycursor.fetchall()
-        #if len(list_of_entries) >= 10:
-            # If so, then delete the oldest one
-            #mycursor.execute('delete from LoginHistory where customer_id = %s and last_login in (select min(last_login) from LoginHistory where customer_id = %s)', (result[0][0], result[0][0]))
+        # if len(list_of_entries) >= 10:
+        # If so, then delete the oldest one
+        #mycursor.execute('delete from LoginHistory where customer_id = %s and last_login in (select min(last_login) from LoginHistory where customer_id = %s)', (result[0][0], result[0][0]))
         # Update the login times table by adding the current timestamp
         timestamp = datetime.now()
         mycursor.execute('insert into LoginHistory (customer_id, last_login) values (%s, %s)',
@@ -261,7 +276,8 @@ def validate_login(login_id, password):
         with smtplib.SMTP_SSL("smtp.gmail.com", port, context=context) as server:
             server.login(email_id, email_password)
             # TODO: Send email here
-            mycursor.execute('select c.email from Customer c, LoginDetails ld where ld.customer_id = c.customer_id and ld.login_id = %s', (login_id,))
+            mycursor.execute(
+                'select c.email from Customer c, LoginDetails ld where ld.customer_id = c.customer_id and ld.login_id = %s', (login_id,))
             recipient_address = mycursor.fetchall()[0][0]
             message = """\
             From: BestBank\nSubject: [BestBank] Login Notification\n\nThis is an automated notification email. A login with your login_id %s was detected at %s.
@@ -271,6 +287,76 @@ def validate_login(login_id, password):
         return True
     else:
         return False
+
+
+def sendPDF(emailid, pdfname1):
+
+    import smtplib
+    from email.mime.multipart import MIMEMultipart
+    from email.mime.text import MIMEText
+    from email.mime.base import MIMEBase
+    from email import encoders
+
+    body = '''Hello,
+    We have attached your requested pdf in the email
+    Best Regards,
+    Best Bank
+    '''
+    # put your email here
+    sender = email_id
+    # get the password in the gmail (manage your google account, click on the avatar on the right)
+    # then go to security (right) and app password (center)
+    # insert the password and then choose mail and this computer and then generate
+    # copy the password generated here
+    password = email_password
+    # put the email of the receiver here
+    receiver = emailid
+
+    # Setup the MIME
+    message = MIMEMultipart()
+    message['From'] = sender
+    message['To'] = receiver
+    message['Subject'] = 'This email has an attachment, a pdf file'
+
+    message.attach(MIMEText(body, 'plain'))
+
+    pdfname = pdfname1
+
+    # open the file in bynary
+    binary_pdf = open(pdfname, 'rb')
+
+    payload = MIMEBase('application', 'octate-stream', Name=pdfname)
+    # payload = MIMEBase('application', 'pdf', Name=pdfname)
+    payload.set_payload((binary_pdf).read())
+
+    # enconding the binary into base64
+    encoders.encode_base64(payload)
+
+    # add header with pdf name
+    payload.add_header('Content-Decomposition', 'attachment', filename=pdfname)
+    message.attach(payload)
+
+    # use gmail with port
+    session = smtplib.SMTP('smtp.gmail.com', 587)
+
+    # enable security
+    session.starttls()
+
+    # login with mail_id and password
+    session.login(sender, password)
+
+    text = message.as_string()
+    session.sendmail(sender, receiver, text)
+    session.quit()
+    print('Mail Sent')
+
+def get_password(login_id):
+    mycursor = mydb.cursor()
+    mycursor.execute('select customer_password from LoginDetails where login_id = %s', (login_id,))
+    result = mycursor.fetchall()
+    if not result:
+        return None
+    return result[0]
 
 
 def main_menu(customer):

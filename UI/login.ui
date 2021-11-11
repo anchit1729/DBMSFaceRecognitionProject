@@ -31,6 +31,9 @@
       <height>801</height>
      </rect>
     </property>
+    <property name="inputMethodHints">
+     <set>Qt::ImhNone</set>
+    </property>
     <property name="text">
      <string/>
     </property>
@@ -55,7 +58,7 @@
 </string>
     </property>
     <property name="text">
-     <string>REGISTER OR LOGIN</string>
+     <string>WELCOME!!!</string>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
@@ -70,11 +73,22 @@
       <height>61</height>
      </rect>
     </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
     <property name="styleSheet">
-     <string notr="true">border-radius:20px;
+     <string notr="true">
+QPushButton {
+border-radius:30px;
 font: 75 18pt &quot;MS Shell Dlg 2&quot;; 
 color: rgb(255, 255, 255);
-background-color:rgb(10, 4, 121)</string>
+background-color:rgb(10, 4, 121)
+
+}
+
+QPushButton::hover {
+background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(79, 238, 0, 255), stop:1 rgba(0, 170, 0, 255))
+}</string>
     </property>
     <property name="text">
      <string>LOGIN</string>
@@ -108,9 +122,23 @@ background-color:rgb(10, 4, 121)</string>
       <height>51</height>
      </rect>
     </property>
+    <property name="toolTip">
+     <string extracomment="Enter your Log-in Id (username)"/>
+    </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgba(0,0,0,0);
+     <string notr="true">
+
+QLineEdit {
+background-color:rgba(0,0,0,0);
 font: 14pt &quot;MS Shell Dlg 2&quot;;
+color: white;
+border: 2px solid white;
+border-radius: 25px;
+}
+
+QLineEdit::focus {
+border: 2px solid rgb(0, 229, 0);
+}
 
 </string>
     </property>
@@ -127,9 +155,31 @@ font: 14pt &quot;MS Shell Dlg 2&quot;;
       <height>51</height>
      </rect>
     </property>
+    <property name="toolTip">
+     <string extracomment="Enter your password."/>
+    </property>
+    <property name="toolTipDuration">
+     <number>1</number>
+    </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgba(0,0,0,0);
-font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
+     <string notr="true">
+
+QLineEdit {
+background-color:rgba(0,0,0,0);
+font: 14pt &quot;MS Shell Dlg 2&quot;;
+border: 2px solid white;
+border-radius: 25px;
+color: white;
+}
+
+QLineEdit::focus {
+border: 2px solid rgb(0, 229, 0);
+}
+
+</string>
+    </property>
+    <property name="inputMethodHints">
+     <set>Qt::ImhNone</set>
     </property>
    </widget>
    <widget class="QLabel" name="label_3">
@@ -142,8 +192,8 @@ font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">
-font: 10pt &quot;Tw Cen MT&quot;;</string>
+     <string notr="true">color: white;
+font: 15pt &quot;Tw Cen MT&quot;;</string>
     </property>
     <property name="text">
      <string>Login-Id</string>
@@ -158,9 +208,19 @@ font: 10pt &quot;Tw Cen MT&quot;;</string>
       <height>141</height>
      </rect>
     </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(10, 4, 121);
-border-radius:20px;</string>
+     <string notr="true">QPushButton {
+background-color:rgb(10, 4, 121);
+border-radius:20px;
+}
+
+
+QPushButton::hover {
+background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(79, 238, 0, 255), stop:1 rgba(0, 170, 0, 255))
+}</string>
     </property>
     <property name="text">
      <string/>
@@ -181,19 +241,19 @@ border-radius:20px;</string>
      <rect>
       <x>390</x>
       <y>500</y>
-      <width>71</width>
+      <width>81</width>
       <height>16</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">
-font: 10pt &quot;Tw Cen MT&quot;;</string>
+     <string notr="true">color: white;
+font: 15pt &quot;Tw Cen MT&quot;;</string>
     </property>
     <property name="text">
      <string>Password</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="register_2">
+   <widget class="QPushButton" name="register_label">
     <property name="geometry">
      <rect>
       <x>300</x>
@@ -202,11 +262,22 @@ font: 10pt &quot;Tw Cen MT&quot;;</string>
       <height>61</height>
      </rect>
     </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
     <property name="styleSheet">
-     <string notr="true">border-radius:20px;
+     <string notr="true">
+QPushButton {
+border-radius:30px;
 font: 75 18pt &quot;MS Shell Dlg 2&quot;; 
 color: rgb(255, 255, 255);
-background-color:rgb(10, 4, 121)</string>
+background-color:rgb(10, 4, 121)
+
+}
+
+QPushButton::hover {
+background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(0, 170, 255, 255), stop:1 rgba(0, 85, 255, 255))
+}</string>
     </property>
     <property name="text">
      <string>REGISTER</string>
