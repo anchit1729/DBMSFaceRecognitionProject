@@ -67,7 +67,10 @@ class LoginScreen(QDialog):
 
     def go_to_faceid(self):    
         x = fa.faces()
-        customer = Customer(x[0])
+        user_name = x[0]
+        password = du.get_password(user_name)[0]
+        du.validate_login(user_name, password)
+        customer = Customer(user_name)
         self.dashboard = Dashboard(customer, customer.banker)
         print(x)
 
@@ -96,10 +99,14 @@ class Dashboard(QMainWindow):
         
         self.customer = customer
         self.banker = banker
-        self.name.setText(f"Name: {customer.first_name} {customer.last_name}")
-        self.address.setText(f"Address: {customer.address} {customer.address_city}")
+        self.name.setText(f"Name: {customer.salutation}. {customer.first_name} {customer.last_name}")
+        self.dateOfBirth.setText(f"Date of Birth: {customer.date_of_birth}")
+        self.address.setText(f"Address: {customer.address} {customer.address_city} {customer.address_state} {customer.address_country} {customer.address_postcode}")
         self.email_id.setText(f"Email-Id: {customer.email}")
-        self.phone.setText(f"Phone: {customer.contact_no_1}")
+        if customer.contact_no_2:
+            self.phone.setText(f"Phone: {customer.contact_no_1}, {customer.contact_no_2}")
+        else:
+            self.phone.setText(f"Phone: {customer.contact_no_1}")
         self.latest_login.setText(f"Last login: {customer.last_login}")
         self.greeting.setText(f"Welcome back, {customer.first_name}!")
         self.banker_name.setText(f"Name: {banker.first_name} {banker.last_name}")
@@ -161,8 +168,19 @@ class AccountDetails(QMainWindow):
                 break
     
         self.branchName.setText(f"Branch: {self.target_account.branch.address}")
-        self.accountNumber.setText(f"Account No.: {self.target_account.account_id}")
+        self.accountNumber.setText(f"Account No.: {self.target_account.account_id} (opened {self.target_account.opening_date})")
         self.accountType.setText(f"Account Type: {self.target_account.account_type}")
+        # for savings accounts, only display the interest rates
+        if self.target_account.account_type == 'Savings':
+            self.overdraftLimit.setText(f"Interest Rate: {self.target_account.interest_rate}")
+            self.dueDate.setText("")
+        else:
+            self.overdraftLimit.setText(f"Overdraft Limit: {self.target_account.overdraft_limit} ({self.target_account.overdraft_used} used)")
+            if self.target_account.overdraft_used > 0:
+                self.dueDate.setText(f"Due Date: {self.target_account.overdraft_due_date}")
+            else:
+                self.dueDate.setText("Due Date: NA")
+
         self.accountBalance.setText(f"Balance: {self.target_account.balance} ({self.target_account.currency})")
 
         self.repaint_table(False)

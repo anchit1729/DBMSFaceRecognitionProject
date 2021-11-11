@@ -631,7 +631,7 @@ border-radius:20px;</string>
      <property name="geometry">
       <rect>
        <x>50</x>
-       <y>314</y>
+       <y>305</y>
        <width>359</width>
        <height>29</height>
       </rect>
@@ -666,7 +666,7 @@ font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
      <property name="geometry">
       <rect>
        <x>50</x>
-       <y>240</y>
+       <y>250</y>
        <width>461</width>
        <height>29</height>
       </rect>
@@ -701,7 +701,7 @@ font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
      <property name="geometry">
       <rect>
        <x>50</x>
-       <y>277</y>
+       <y>278</y>
        <width>551</width>
        <height>29</height>
       </rect>
@@ -736,7 +736,7 @@ font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
      <property name="geometry">
       <rect>
        <x>50</x>
-       <y>200</y>
+       <y>190</y>
        <width>431</width>
        <height>41</height>
       </rect>
@@ -1108,6 +1108,41 @@ background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgb
       <string>Logout</string>
      </property>
     </widget>
+    <widget class="QLabel" name="dateOfBirth">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>217</y>
+       <width>431</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>MS Shell Dlg 2</family>
+       <pointsize>14</pointsize>
+       <weight>50</weight>
+       <italic>false</italic>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="layoutDirection">
+      <enum>Qt::RightToLeft</enum>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: white;
+font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
+     </property>
+     <property name="text">
+      <string>Name: Dwight K. Schrute</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
+    </widget>
     <zorder>back</zorder>
     <zorder>logo</zorder>
     <zorder>profilebg</zorder>
@@ -1129,6 +1164,7 @@ background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgb
     <zorder>banker_phone</zorder>
     <zorder>banker_experience</zorder>
     <zorder>logout</zorder>
+    <zorder>dateOfBirth</zorder>
    </widget>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>

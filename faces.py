@@ -5,13 +5,12 @@ def faces():
     import numpy as np
     import mysql.connector
     import cv2
-    import pyttsx3
     import pickle
     from datetime import datetime
     import sys
 
     # 1 Create database connection
-    myconn = mysql.connector.connect(host="localhost", user="root", passwd="Raghav@2001", database="banking_application")
+    myconn = mysql.connector.connect(host="localhost", user="root", passwd="root1234", database="banking_application")
     date = datetime.utcnow()
     now = datetime.now()
     current_time = now.strftime("%H:%M:%S")
@@ -26,11 +25,6 @@ def faces():
     with open("labels.pickle", "rb") as f:
         labels = pickle.load(f)
         labels = {v: k for k, v in labels.items()}
-
-    # create text to speech
-    engine = pyttsx3.init()
-    rate = engine.getProperty("rate")
-    engine.setProperty("rate", 175)
 
     # Define camera and detect face
     face_cascade = cv2.CascadeClassifier('haarcascade/haarcascade_frontalface_default.xml')
@@ -95,7 +89,6 @@ def faces():
                 
                     hello = ("Hello ", current_name, "Welcom to the iKYC System")
                     print(hello)
-                    engine.say(hello)
                     # engine.runAndWait()
                     key = cv2.waitKey(2)
                     cap.release()
@@ -112,7 +105,6 @@ def faces():
                 cv2.rectangle(frame, (x, y), (x + w, y + h), (255, 0, 0), (2))
                 hello = ("Your face is not recognized")
                 print(hello)
-                engine.say(hello)
                 # engine.runAndWait()
 
         cv2.imshow('iKYC System', frame)

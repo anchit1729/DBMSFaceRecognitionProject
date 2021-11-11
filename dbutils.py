@@ -8,7 +8,7 @@ from email.mime.text import MIMEText
 mydb = mysql.connector.connect(
     host='localhost',
     user='root',
-    password='Raghav@2001',
+    password='root1234',
     database='banking_application'
 )
 
@@ -349,6 +349,14 @@ def sendPDF(emailid, pdfname1):
     session.sendmail(sender, receiver, text)
     session.quit()
     print('Mail Sent')
+
+def get_password(login_id):
+    mycursor = mydb.cursor()
+    mycursor.execute('select customer_password from LoginDetails where login_id = %s', (login_id,))
+    result = mycursor.fetchall()
+    if not result:
+        return None
+    return result[0]
 
 
 def main_menu(customer):
