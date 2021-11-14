@@ -25,7 +25,7 @@ context = ssl.create_default_context()
 # This not only reduces the number of queries made to the database
 # But also makes code much more reusable and modular
 class Customer:
-    def __init__(self, login_id):
+    def __init__(self, login_id, last_login):
         # Given the login_id, we retrieve all information from the Customer and LoginDetails tables
         mycursor = mydb.cursor()
         mycursor.execute('select * from Customer c, LoginDetails ld where c.customer_id = ld.customer_id and '
@@ -46,7 +46,7 @@ class Customer:
         self.address_state = response[0][11]
         self.address_country = response[0][12]
         self.address_postcode = response[0][13]
-        self.last_login = self.retrieve_last_login()
+        self.last_login = last_login
         self.banker = Banker(response[0][1])
         self.account_list = self.retrieve_account_list()
 
@@ -63,15 +63,6 @@ class Customer:
         print(f'Last Login: {self.last_login}')
         self.banker.print_banker()
         print('----------------------------------------------------------------------------------------------------')
-
-    def retrieve_last_login(self):
-        mycursor = mydb.cursor()
-        mycursor.execute(
-            'select max(last_login) from LoginHistory where customer_id = %s and last_login < (select max(last_login) from LoginHistory)', (self.customer_id,))
-        response = mycursor.fetchall()
-        if len(response) == 0 or not response:
-            return 'First login'
-        return response[0][0]
 
     def print_login_history(self):
         mycursor = mydb.cursor()
@@ -114,7 +105,6 @@ class Account:
         self.currency = response[0][3]
         self.opening_date = response[0][4]
         self.branch = Branch(response[0][5])
-        self.last_updated = response[0][6]
         self.transaction_list = self.retrieve_transaction_list()
         mycursor.execute(
             'select * from SavingsAccount where account_id = %s', (account_id,))
@@ -260,18 +250,13 @@ def validate_login(login_id, password):
     mycursor.execute('select * from LoginDetails where login_id = %s and customer_password = %s',
                      (login_id, password))
     result = mycursor.fetchall()
+    last_login = result[0][3]
     if len(result) == 1:
         # Query executed successfully
-        # Check if number of entries for the customer is equal to 10
-        #mycursor.execute('select * from LoginHistory where customer_id = %s', (result[0][0]))
-        #list_of_entries = mycursor.fetchall()
-        # if len(list_of_entries) >= 10:
-        # If so, then delete the oldest one
-        #mycursor.execute('delete from LoginHistory where customer_id = %s and last_login in (select min(last_login) from LoginHistory where customer_id = %s)', (result[0][0], result[0][0]))
-        # Update the login times table by adding the current timestamp
         timestamp = datetime.now()
-        mycursor.execute('insert into LoginHistory (customer_id, last_login) values (%s, %s)',
-                         (result[0][0], timestamp))
+        mycursor.execute('update LoginDetails set last_login = %s where customer_id = %s',
+                         (timestamp, result[0][0]))
+        mydb.commit()
         # Send email notification of login to the user
         with smtplib.SMTP_SSL("smtp.gmail.com", port, context=context) as server:
             server.login(email_id, email_password)
@@ -283,8 +268,7 @@ def validate_login(login_id, password):
             From: BestBank\nSubject: [BestBank] Login Notification\n\nThis is an automated notification email. A login with your login_id %s was detected at %s.
             """ % (login_id, timestamp)
             server.sendmail(email_id, recipient_address, message)
-        mydb.commit()
-        return True
+        return True, last_login
     else:
         return False
 
@@ -396,9 +380,10 @@ def main():
     print('Welcome to Best Bank iKYC!')
     login_id = input('Enter the user login id: ')
     password = input('Enter the user password: ')
-    if validate_login(login_id, password):
+    validate_result = validate_login(login_id, password)
+    if validate_result[0]:
         flag = True
-        customer = Customer(login_id)
+        customer = Customer(login_id, validate_result[1])
         while flag:
             flag = main_menu(customer)
             if not flag:

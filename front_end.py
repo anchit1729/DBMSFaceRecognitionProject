@@ -56,7 +56,7 @@ class LoginScreen(QDialog):
         user_name = self.user_name.text()
         password = self.password.text()
         auth_value = du.validate_login(user_name, password)
-        if (auth_value):
+        if (auth_value[0]):
             self.error.setText("")
             fc.username(user_name)
             tr.training()
@@ -69,8 +69,8 @@ class LoginScreen(QDialog):
         x = fa.faces()
         user_name = x[0]
         password = du.get_password(user_name)[0]
-        du.validate_login(user_name, password)
-        customer = Customer(user_name)
+        result = du.validate_login(user_name, password)
+        customer = Customer(user_name, result[1])
         self.dashboard = Dashboard(customer, customer.banker)
         print(x)
 
@@ -84,7 +84,7 @@ class LoginScreen(QDialog):
         elif not auth_value:
             self.error.setText("Incorrect Login-Id or Password!")
         else:        
-            customer = Customer(user_name)
+            customer = Customer(user_name, auth_value[1])
             self.dashboard = Dashboard(customer, customer.banker)
             self.user_name.setText("")
             self.password.setText("")
@@ -123,7 +123,7 @@ class Dashboard(QMainWindow):
             self.account_table.setItem(table_row, 0, QtWidgets.QTableWidgetItem(account.account_id))
             self.account_table.setItem(table_row, 1, QtWidgets.QTableWidgetItem(account.account_type))
             self.account_table.setItem(table_row, 2, QtWidgets.QTableWidgetItem(account.currency))
-            self.account_table.setItem(table_row, 3, QtWidgets.QTableWidgetItem(str(account.balance)))
+            self.account_table.setItem(table_row, 3, QtWidgets.QTableWidgetItem(f'{account.balance:.2f}'))
             table_row += 1
         
         self.account_table.itemClicked.connect(self.handle_account_clicked)
@@ -172,16 +172,16 @@ class AccountDetails(QMainWindow):
         self.accountType.setText(f"Account Type: {self.target_account.account_type}")
         # for savings accounts, only display the interest rates
         if self.target_account.account_type == 'Savings':
-            self.overdraftLimit.setText(f"Interest Rate: {self.target_account.interest_rate}")
+            self.overdraftLimit.setText(f"Interest Rate: {self.target_account.interest_rate:.2f}")
             self.dueDate.setText("")
         else:
-            self.overdraftLimit.setText(f"Overdraft Limit: {self.target_account.overdraft_limit} ({self.target_account.overdraft_used} used)")
+            self.overdraftLimit.setText(f"Overdraft Limit: {self.target_account.overdraft_limit:.2f} ({self.target_account.overdraft_used:.2f} used)")
             if self.target_account.overdraft_used > 0:
                 self.dueDate.setText(f"Due Date: {self.target_account.overdraft_due_date}")
             else:
                 self.dueDate.setText("Due Date: NA")
 
-        self.accountBalance.setText(f"Balance: {self.target_account.balance} ({self.target_account.currency})")
+        self.accountBalance.setText(f"Balance: {self.target_account.balance:.2f} ({self.target_account.currency})")
 
         self.repaint_table(False)
     
@@ -232,7 +232,7 @@ class AccountDetails(QMainWindow):
             x.field_names = ["Transaction", "Date", "Time", "Description", "Amount", "Transaction Type"]
 
             for i in self.target_account.transaction_list:
-                x.add_row([str(i.transaction_id), str(i.date_time.date()),str(i.date_time.time()), str(i.transaction_details), f"{i.currency}{i.amount}", str(i.transaction_type)])
+                x.add_row([str(i.transaction_id), str(i.date_time.date()),str(i.date_time.time()), str(i.transaction_details), f"{i.currency}{i.amount:.2f}", str(i.transaction_type)])
 
             pp.pdfprint(x, self.target_account)
 
@@ -271,7 +271,7 @@ class AccountDetails(QMainWindow):
         day = self.day.text()
         month = self.month.text()
         year = self.year.text()
-        amount = self.amount.text()
+        amount = float(self.amount.text())
         
         if time != QTime(0, 0):
             self.target_account.transaction_list = [x for x in self.target_account.transaction_list if QTime(x.date_time.hour, x.date_time.minute) == time]
@@ -282,7 +282,7 @@ class AccountDetails(QMainWindow):
         if year:
             self.target_account.transaction_list = [x for x in self.target_account.transaction_list if str(x.date_time.year) == year]
         if amount:
-            self.target_account.transaction_list = [x for x in self.target_account.transaction_list if str(x.amount) == amount]
+            self.target_account.transaction_list = [x for x in self.target_account.transaction_list if f'{x.amount:.2f}' == f'{amount:.2f}']
         
         self.repaint_table(False)
     
@@ -313,7 +313,7 @@ class AccountDetails(QMainWindow):
             self.transactionTable.setItem(tablerow, 1, QtWidgets.QTableWidgetItem(str(transaction.date_time.date())))
             self.transactionTable.setItem(tablerow, 2, QtWidgets.QTableWidgetItem(str(transaction.date_time.time())))
             self.transactionTable.setItem(tablerow, 3, QtWidgets.QTableWidgetItem(transaction.transaction_details))
-            self.transactionTable.setItem(tablerow, 4, QtWidgets.QTableWidgetItem(f"{transaction.currency}{transaction.amount}"))
+            self.transactionTable.setItem(tablerow, 4, QtWidgets.QTableWidgetItem(f"{transaction.currency}{transaction.amount:.2f}"))
             self.transactionTable.setItem(tablerow, 5, QtWidgets.QTableWidgetItem(transaction.transaction_type))
             tablerow += 1
             
@@ -366,7 +366,7 @@ class TransactionDetails(QMainWindow):
         self.accountID.setText(f"Account No.: {self.account_id}")
         self.transactionDetails.setText(f"Transaction Details: {self.target_transaction.transaction_details}")
         self.transactionType.setText(f"Transaction Type: {self.target_transaction.transaction_type}")
-        self.amount.setText(f"Amount: {self.target_transaction.amount}")
+        self.amount.setText(f"Amount: {self.target_transaction.amount:.2f}")
         self.currency.setText(f"Currency: {self.target_transaction.currency}")
         self.time.setText(f"Time: {self.target_transaction.date_time}")
         self.remarks.setText(f"Remarks: {self.target_transaction.remarks}")
@@ -390,7 +390,7 @@ class TransactionDetails(QMainWindow):
             pdf.cell(200, 10, txt=f"Account No.: {self.account_id}", ln=4, align="L")
             pdf.cell(200, 10, txt=f"Transaction Details: {self.target_transaction.transaction_details}", ln=5, align="L")
             pdf.cell(200, 10, txt=f"Transaction Type: {self.target_transaction.transaction_type}", ln=6, align="L")
-            pdf.cell(200, 10, txt=f"Amount: {self.target_transaction.amount}", ln=7, align="L")
+            pdf.cell(200, 10, txt=f"Amount: {self.target_transaction.amount:.2f}", ln=7, align="L")
             pdf.cell(200, 10, txt=f"Currency: {self.target_transaction.currency}", ln=8, align="L")
             pdf.cell(200, 10, txt=f"Time: {self.target_transaction.date_time}", ln=9, align="L")
             pdf.cell(200, 10, txt=f"Remarks: {self.target_transaction.remarks}", ln=10, align="L")
@@ -429,7 +429,7 @@ class TransactionDetails(QMainWindow):
             pdf.cell(200, 10, txt=f"Account No.: {self.account_id}", ln=4, align="L")
             pdf.cell(200, 10, txt=f"Transaction Details: {self.target_transaction.transaction_details}", ln=5, align="L")
             pdf.cell(200, 10, txt=f"Transaction Type: {self.target_transaction.transaction_type}", ln=6, align="L")
-            pdf.cell(200, 10, txt=f"Amount: {self.target_transaction.amount}", ln=7, align="L")
+            pdf.cell(200, 10, txt=f"Amount: {self.target_transaction.amount:.2f}", ln=7, align="L")
             pdf.cell(200, 10, txt=f"Currency: {self.target_transaction.currency}", ln=8, align="L")
             pdf.cell(200, 10, txt=f"Time: {self.target_transaction.date_time}", ln=9, align="L")
             pdf.cell(200, 10, txt=f"Remarks: {self.target_transaction.remarks}", ln=10, align="L")
