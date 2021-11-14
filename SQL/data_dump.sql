@@ -18,54 +18,36 @@ Values
 ('CUST10001','Mr','Anchit','Mishra','2000-05-15','+854 5376 0021','+852 2315 0069','anchit@connect.hku.hk','A2012 JCSV-III','Hong Kong','','Hong Kong SAR','999077','B1001'),
 ('CUST10002','Mr','Abhigyan','Kashyap','2001-05-14','+854 6734 6242','','abhigyan@connect.hku.hk','34A T Tower','Hong Kong','','Hong Kong SAR','999077','B1002'),
 ('CUST10003','Mr','Raghav','Agarwal','2001-11-03','+854 6714 1613','+852 8294 4232','raghav@connect.hku.hk','12D Richmond Road','Hong Kong','','Hong Kong SAR','999077','B1003'),
-('CUST10004','Mr','Ajayveer','Singh','2001-01-11','+854 6734 9414','','ajay@connect.hku.hk','8 KC Street','Hong Kong','','Hong Kong SAR','999077','B1004'),
+('CUST10004','Mr','Ajayveer','Singh','2001-01-11','+854 6734 9414','','ajayvs@connect.hku.hk','8 KC Street','Hong Kong','','Hong Kong SAR','999077','B1004'),
 ('CUST10005','Mr','Kritik','Satija','2001-03-12','+854 6793 4321','+852 1523 7584','kritik@connect.hku.hk','A19-B KC Tower','Hong Kong','','Hong Kong SAR','999077','B1005');
 
-Insert Into LoginHistory (customer_id,last_login)
-Values
-('CUST10001','2020-04-06 08:05:00'),
-('CUST10001','2020-06-22 09:38:21'),
-('CUST10001','2020-11-06 12:01:45'),
-('CUST10001','2020-12-06 14:35:20'),
-('CUST10002','2020-06-23 11:03:28'),
-('CUST10003','2020-05-06 16:10:10'),
-('CUST10003','2020-06-06 18:59:06'),
-('CUST10003','2020-06-24 17:26:09'),
-('CUST10004','2020-06-17 20:14:12'),
-('CUST10004','2020-06-18 22:15:18'),
-('CUST10004','2020-06-19 23:50:01'),
-('CUST10004','2020-06-20 20:20:01'),
-('CUST10004','2020-06-25 15:22:19'),
-('CUST10005','2020-06-21 10:00:58'),
-('CUST10005','2020-06-26 18:20:00');
-
 Insert into LoginDetails
-(customer_id,login_id,customer_password)
+(customer_id,login_id,customer_password, last_login)
 Values
-('CUST10001','anchit1729','custAnchit'),
-('CUST10002','ak472001','custAbhigyan'),
-('CUST10003','marwadi3000','custRaghav'),
-('CUST10004','ajayveer2002','custAjay'),
-('CUST10005','voyeur69','custKritik');
+('CUST10001','anchit1729','custAnchit', '2021-10-20 09:20:31'),
+('CUST10002','ak472001','custAbhigyan', '2021-10-29 19:00:01'),
+('CUST10003','marwadi3000','custRaghav', '2021-10-10 07:35:11'),
+('CUST10004','ajayveer2002','custAjay', '2021-10-15 11:22:08'),
+('CUST10005','voyeur69','custKritik', '2021-10-21 13:28:02');
 
 Insert Into Account
-(account_id,customer_id,account_balance,account_currency,opening_date,branch_id,last_updated)
+(account_id,customer_id,account_balance,account_currency,opening_date,branch_id)
 Values
 -- Accounts for Anchit
-('A123000001','CUST10001','5550','HKD','2019-09-01','H1002','2021-10-30'),
-('A123000002','CUST10001','1500','USD','2019-11-01','H1004','2021-10-30'),
-('A123000003','CUST10001','11000','HKD','2019-11-04','H1002','2021-10-30'),
+('A123000001','CUST10001','5550','HKD','2019-09-01','H1002'),
+('A123000002','CUST10001','1500','USD','2019-11-01','H1004'),
+('A123000003','CUST10001','11000','HKD','2019-11-04','H1002'),
 -- Accounts for Abhigyan
-('A123000004','CUST10002','5000','HKD','2019-09-04','H1001','2021-10-30'),
-('A123000005','CUST10002','900','USD','2020-01-05','H1004','2021-10-30'),
+('A123000004','CUST10002','5000','HKD','2019-09-04','H1001'),
+('A123000005','CUST10002','900','USD','2020-01-05','H1004'),
 -- Accounts for Raghav
-('A123000006','CUST10003','8950','USD','2019-09-05','H1003','2021-10-30'),
+('A123000006','CUST10003','8950','USD','2019-09-05','H1003'),
 -- Accounts for Ajay
-('A123000007','CUST10004','1200','HKD','2019-09-06','H1001','2021-10-30'),
-('A123000008','CUST10004','4800','USD','2019-09-07','H1002','2021-10-30'),
+('A123000007','CUST10004','1200','HKD','2019-09-06','H1001'),
+('A123000008','CUST10004','4800','USD','2019-09-07','H1002'),
 -- Accounts for Kritik
-('A123000009','CUST10005','8580','USD','2019-08-02','H1003','2021-10-30'),
-('A123000010','CUST10005','11850','HKD','2019-11-12','H1002','2021-10-30');
+('A123000009','CUST10005','8580','USD','2019-08-02','H1003'),
+('A123000010','CUST10005','11850','HKD','2019-11-12','H1002');
 
 Insert Into SavingsAccount
 (account_id,interest_rate)

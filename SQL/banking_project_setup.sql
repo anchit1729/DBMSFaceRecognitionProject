@@ -53,19 +53,12 @@ CREATE TABLE Customer
   FOREIGN KEY (banker_id) REFERENCES Banker (banker_id)
 );
 
-CREATE TABLE LoginHistory
-(
-  customer_id CHAR(10) NOT NULL,
-  last_login DATETIME NOT NULL,
-  PRIMARY KEY (customer_id, last_login),
-  FOREIGN KEY (customer_id) REFERENCES Customer (customer_id)
-);
-
 CREATE TABLE LoginDetails
 (
   customer_id CHAR(10) NOT NULL UNIQUE,
   login_id VARCHAR(50) NOT NULL,
   customer_password VARCHAR(50) NOT NULL,
+  last_login DATETIME,
   PRIMARY KEY (login_id),
   FOREIGN KEY (customer_id) REFERENCES Customer (customer_id)
 );
@@ -78,7 +71,6 @@ CREATE TABLE Account
   account_currency CHAR(3) NOT NULL check (account_currency IN ('HKD','USD','GBP')),
   opening_date DATE NOT NULL,
   branch_id VARCHAR(5) NOT NULL,
-  last_updated DATETIME NOT NULL,
   PRIMARY KEY (account_id),
   FOREIGN KEY (customer_id) REFERENCES Customer (customer_id),
   FOREIGN KEY (branch_id) REFERENCES Branch (branch_id)
@@ -107,9 +99,9 @@ CREATE TABLE Transaction
   transaction_id VARCHAR(10) NOT NULL,
   account_id CHAR(10) NOT NULL,
   transaction_details VARCHAR(15) NOT NULL,
-  transaction_type CHAR(2) check (transaction_type in ('CR','DR')),
+  transaction_type CHAR(2) NOT NULL check (transaction_type in ('CR','DR')),
   remarks VARCHAR(50) NOT NULL,
-  amount INT NOT NULL,
+  amount DECIMAL(11, 2) NOT NULL,
   currency CHAR(3) NOT NULL check (currency IN ('HKD','USD','GBP')),
   transaction_date_time DATETIME NOT NULL,
   PRIMARY KEY (transaction_id, account_id),

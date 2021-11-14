@@ -1,214 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="68530535-d220-4f1e-9fdb-33e5111edee8" name="Default Changelist" comment="Include files">
+    <list default="true" id="68530535-d220-4f1e-9fdb-33e5111edee8" name="Default Changelist" comment="Made fixes to UI and dbutils to make sure relevant attributes are displayed correctly.&#10;&#10;Next step: Need to restructure the database to remove the LastLogin table, and instead include it as an attribute.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/Dashboard.ui" beforeDir="false" afterPath="$PROJECT_DIR$/UI/Dashboard.ui" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000001.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000002.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000003.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000004.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000005.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000006.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000007.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000008.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000009.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000010.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000011.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000012.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000013.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000014.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000015.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000016.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000017.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000018.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000019.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000020.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000021.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000022.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000023.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000024.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000025.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000026.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000027.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000028.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000029.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000030.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000031.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000032.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000033.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000034.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000035.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000036.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000037.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000038.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000039.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000040.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000041.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000042.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000043.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000044.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000045.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000046.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000047.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000048.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000049.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000050.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000051.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000052.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000053.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000054.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000055.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000056.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000057.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000058.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000059.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000060.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000061.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000062.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000063.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000064.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000065.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000066.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000067.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000068.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000069.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000070.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000071.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000072.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000073.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000074.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000075.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000076.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000077.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000078.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000079.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000080.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000081.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000082.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000083.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000084.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000085.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000086.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000087.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000088.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000089.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000090.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000091.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000092.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000093.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000094.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000095.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000096.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000097.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000098.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000099.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000100.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/voyeur69/voyeur69001.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/voyeur69/voyeur69002.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/voyeur69/voyeur69003.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/voyeur69/voyeur69004.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/voyeur69/voyeur69005.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/voyeur69/voyeur69006.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/voyeur69/voyeur69007.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/voyeur69/voyeur69008.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/voyeur69/voyeur69009.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/voyeur69/voyeur69010.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/voyeur69/voyeur69011.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/voyeur69/voyeur69012.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/voyeur69/voyeur69013.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/voyeur69/voyeur69014.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/voyeur69/voyeur69015.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/voyeur69/voyeur69016.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/voyeur69/voyeur69017.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/voyeur69/voyeur69018.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/voyeur69/voyeur69019.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/voyeur69/voyeur69020.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/voyeur69/voyeur69021.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/voyeur69/voyeur69022.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/voyeur69/voyeur69023.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/voyeur69/voyeur69024.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/voyeur69/voyeur69025.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/voyeur69/voyeur69026.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/voyeur69/voyeur69027.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/voyeur69/voyeur69028.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/voyeur69/voyeur69029.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/voyeur69/voyeur69030.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/voyeur69/voyeur69031.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/voyeur69/voyeur69032.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/voyeur69/voyeur69033.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/voyeur69/voyeur69034.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/voyeur69/voyeur69035.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/voyeur69/voyeur69036.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/voyeur69/voyeur69037.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/voyeur69/voyeur69038.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/voyeur69/voyeur69039.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/voyeur69/voyeur69040.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/voyeur69/voyeur69041.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/voyeur69/voyeur69042.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/voyeur69/voyeur69043.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/voyeur69/voyeur69044.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/voyeur69/voyeur69045.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/voyeur69/voyeur69046.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/voyeur69/voyeur69047.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/voyeur69/voyeur69048.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/voyeur69/voyeur69049.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/voyeur69/voyeur69050.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/voyeur69/voyeur69051.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/voyeur69/voyeur69052.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/voyeur69/voyeur69053.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/voyeur69/voyeur69054.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/voyeur69/voyeur69055.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/voyeur69/voyeur69056.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/voyeur69/voyeur69057.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/voyeur69/voyeur69058.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/voyeur69/voyeur69059.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/voyeur69/voyeur69060.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/voyeur69/voyeur69061.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/voyeur69/voyeur69062.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/voyeur69/voyeur69063.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/voyeur69/voyeur69064.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/voyeur69/voyeur69065.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/voyeur69/voyeur69066.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/voyeur69/voyeur69067.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/voyeur69/voyeur69068.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/voyeur69/voyeur69069.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/voyeur69/voyeur69070.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/voyeur69/voyeur69071.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/voyeur69/voyeur69072.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/voyeur69/voyeur69073.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/voyeur69/voyeur69074.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/voyeur69/voyeur69075.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/voyeur69/voyeur69076.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/voyeur69/voyeur69077.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/voyeur69/voyeur69078.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/voyeur69/voyeur69079.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/voyeur69/voyeur69080.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/voyeur69/voyeur69081.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/voyeur69/voyeur69082.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/voyeur69/voyeur69083.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/voyeur69/voyeur69084.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/voyeur69/voyeur69085.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/voyeur69/voyeur69086.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/voyeur69/voyeur69087.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/voyeur69/voyeur69088.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/voyeur69/voyeur69089.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/voyeur69/voyeur69090.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/voyeur69/voyeur69091.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/voyeur69/voyeur69092.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/voyeur69/voyeur69093.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/voyeur69/voyeur69094.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/voyeur69/voyeur69095.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/voyeur69/voyeur69096.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/voyeur69/voyeur69097.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/voyeur69/voyeur69098.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/voyeur69/voyeur69099.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/voyeur69/voyeur69100.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SQL/banking_project_setup.sql" beforeDir="false" afterPath="$PROJECT_DIR$/SQL/banking_project_setup.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SQL/data_dump.sql" beforeDir="false" afterPath="$PROJECT_DIR$/SQL/data_dump.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dbutils.py" beforeDir="false" afterPath="$PROJECT_DIR$/dbutils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/faces.py" beforeDir="false" afterPath="$PROJECT_DIR$/faces.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front_end.py" beforeDir="false" afterPath="$PROJECT_DIR$/front_end.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/labels.pickle" beforeDir="false" afterPath="$PROJECT_DIR$/labels.pickle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/train.yml" beforeDir="false" afterPath="$PROJECT_DIR$/train.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -414,7 +212,14 @@
       <option name="project" value="LOCAL" />
       <updated>1635843791980</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Made fixes to UI and dbutils to make sure relevant attributes are displayed correctly.&#10;&#10;Next step: Need to restructure the database to remove the LastLogin table, and instead include it as an attribute.">
+      <created>1636621514996</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1636621514996</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -438,6 +243,7 @@
     <MESSAGE value="Refactored files" />
     <MESSAGE value="Small modifications" />
     <MESSAGE value="Include files" />
-    <option name="LAST_COMMIT_MESSAGE" value="Include files" />
+    <MESSAGE value="Made fixes to UI and dbutils to make sure relevant attributes are displayed correctly.&#10;&#10;Next step: Need to restructure the database to remove the LastLogin table, and instead include it as an attribute." />
+    <option name="LAST_COMMIT_MESSAGE" value="Made fixes to UI and dbutils to make sure relevant attributes are displayed correctly.&#10;&#10;Next step: Need to restructure the database to remove the LastLogin table, and instead include it as an attribute." />
   </component>
 </project>
