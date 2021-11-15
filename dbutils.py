@@ -245,12 +245,18 @@ class Banker:
 
 
 def validate_login(login_id, password):
+    # Check if login_id and password are even entered
+    if not login_id or not password:
+        return None
     # To check if user login information is accurate
     mycursor = mydb.cursor()
     mycursor.execute('select * from LoginDetails where login_id = %s and customer_password = %s',
                      (login_id, password))
     result = mycursor.fetchall()
-    last_login = result[0][3]
+    if result:
+        last_login = result[0][3]
+    else:
+        last_login = None
     if len(result) == 1:
         # Query executed successfully
         timestamp = datetime.now()

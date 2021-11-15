@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="68530535-d220-4f1e-9fdb-33e5111edee8" name="Default Changelist" comment="Made fixes to UI and dbutils to make sure relevant attributes are displayed correctly.&#10;&#10;Next step: Need to restructure the database to remove the LastLogin table, and instead include it as an attribute.">
+    <list default="true" id="68530535-d220-4f1e-9fdb-33e5111edee8" name="Default Changelist" comment="Made minor fixes, such as searching for transactions with decimal values in amount as well as trimmed DB design to improve efficiency while keeping utility the same.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SQL/banking_project_setup.sql" beforeDir="false" afterPath="$PROJECT_DIR$/SQL/banking_project_setup.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SQL/data_dump.sql" beforeDir="false" afterPath="$PROJECT_DIR$/SQL/data_dump.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dbutils.py" beforeDir="false" afterPath="$PROJECT_DIR$/dbutils.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front_end.py" beforeDir="false" afterPath="$PROJECT_DIR$/front_end.py" afterDir="false" />
     </list>
@@ -219,7 +217,14 @@
       <option name="project" value="LOCAL" />
       <updated>1636621514996</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Made minor fixes, such as searching for transactions with decimal values in amount as well as trimmed DB design to improve efficiency while keeping utility the same.">
+      <created>1636898247596</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1636898247596</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -244,6 +249,7 @@
     <MESSAGE value="Small modifications" />
     <MESSAGE value="Include files" />
     <MESSAGE value="Made fixes to UI and dbutils to make sure relevant attributes are displayed correctly.&#10;&#10;Next step: Need to restructure the database to remove the LastLogin table, and instead include it as an attribute." />
-    <option name="LAST_COMMIT_MESSAGE" value="Made fixes to UI and dbutils to make sure relevant attributes are displayed correctly.&#10;&#10;Next step: Need to restructure the database to remove the LastLogin table, and instead include it as an attribute." />
+    <MESSAGE value="Made minor fixes, such as searching for transactions with decimal values in amount as well as trimmed DB design to improve efficiency while keeping utility the same." />
+    <option name="LAST_COMMIT_MESSAGE" value="Made minor fixes, such as searching for transactions with decimal values in amount as well as trimmed DB design to improve efficiency while keeping utility the same." />
   </component>
 </project>

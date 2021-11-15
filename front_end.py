@@ -56,7 +56,7 @@ class LoginScreen(QDialog):
         user_name = self.user_name.text()
         password = self.password.text()
         auth_value = du.validate_login(user_name, password)
-        if (auth_value[0]):
+        if auth_value and auth_value[0]:
             self.error.setText("")
             fc.username(user_name)
             tr.training()
