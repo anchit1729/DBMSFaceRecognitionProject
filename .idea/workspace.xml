@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="68530535-d220-4f1e-9fdb-33e5111edee8" name="Default Changelist" comment="Minor fixes (2)">
+    <list default="true" id="68530535-d220-4f1e-9fdb-33e5111edee8" name="Default Changelist" comment="Minor fixes (3)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SQL/data_dump.sql" beforeDir="false" afterPath="$PROJECT_DIR$/SQL/data_dump.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/AccountDetails.ui" beforeDir="false" afterPath="$PROJECT_DIR$/UI/AccountDetails.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front_end.py" beforeDir="false" afterPath="$PROJECT_DIR$/front_end.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -244,7 +246,14 @@
       <option name="project" value="LOCAL" />
       <updated>1637029504551</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Minor fixes (3)">
+      <created>1637058205992</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1637058205992</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -273,6 +282,7 @@
     <MESSAGE value="Fixed null value error for registration" />
     <MESSAGE value="Made minor fixes" />
     <MESSAGE value="Minor fixes (2)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Minor fixes (2)" />
+    <MESSAGE value="Minor fixes (3)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Minor fixes (3)" />
   </component>
 </project>

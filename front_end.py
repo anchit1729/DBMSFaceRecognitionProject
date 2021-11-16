@@ -273,7 +273,7 @@ class AccountDetails(QMainWindow):
     def repaint_table(self, reset_flag):
         
         tablerow = 0
-        
+
         if reset_flag:
             for account in self.customer.account_list:
                 if account.account_id == self.account_id:
@@ -300,6 +300,7 @@ class AccountDetails(QMainWindow):
         for row in range(row_count):
             if table_item.text() == self.transactionTable.item(row, 0).text():
                 self.go_to_transaction_details(table_item.text())
+                break
                 
 
     def go_to_transaction_details(self, transaction_id):
