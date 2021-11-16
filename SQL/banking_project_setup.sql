@@ -103,7 +103,7 @@ CREATE TABLE Transaction
   remarks VARCHAR(50) NOT NULL,
   amount DECIMAL(11, 2) NOT NULL,
   currency CHAR(3) NOT NULL check (currency IN ('HKD','USD','GBP')),
-  transaction_date_time DATETIME NOT NULL,
+  transaction_date_time DATETIME NOT NULL check (transaction_date_time NOT LIKE ('____-__-__ 00:00:00')),
   PRIMARY KEY (transaction_id, account_id),
   FOREIGN KEY (account_id) REFERENCES Account (account_id)
 );
