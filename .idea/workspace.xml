@@ -1,13 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="68530535-d220-4f1e-9fdb-33e5111edee8" name="Default Changelist" comment="Fixed null value error for registration">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SQL/banking_project_setup.sql" beforeDir="false" afterPath="$PROJECT_DIR$/SQL/banking_project_setup.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SQL/data_dump.sql" beforeDir="false" afterPath="$PROJECT_DIR$/SQL/data_dump.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/AccountDetails.ui" beforeDir="false" afterPath="$PROJECT_DIR$/UI/AccountDetails.ui" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/login.ui" beforeDir="false" afterPath="$PROJECT_DIR$/UI/login.ui" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dbutils.py" beforeDir="false" afterPath="$PROJECT_DIR$/dbutils.py" afterDir="false" />
+    <list default="true" id="68530535-d220-4f1e-9fdb-33e5111edee8" name="Default Changelist" comment="Made minor fixes">
+      <change beforePath="$PROJECT_DIR$/front_end.py" beforeDir="false" afterPath="$PROJECT_DIR$/front_end.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -234,7 +229,14 @@
       <option name="project" value="LOCAL" />
       <updated>1636949157605</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Made minor fixes">
+      <created>1637029384916</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1637029384916</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -261,6 +263,7 @@
     <MESSAGE value="Made fixes to UI and dbutils to make sure relevant attributes are displayed correctly.&#10;&#10;Next step: Need to restructure the database to remove the LastLogin table, and instead include it as an attribute." />
     <MESSAGE value="Made minor fixes, such as searching for transactions with decimal values in amount as well as trimmed DB design to improve efficiency while keeping utility the same." />
     <MESSAGE value="Fixed null value error for registration" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed null value error for registration" />
+    <MESSAGE value="Made minor fixes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Made minor fixes" />
   </component>
 </project>
