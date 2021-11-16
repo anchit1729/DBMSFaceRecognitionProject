@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="68530535-d220-4f1e-9fdb-33e5111edee8" name="Default Changelist" comment="Minor fixes (3)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SQL/data_dump.sql" beforeDir="false" afterPath="$PROJECT_DIR$/SQL/data_dump.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/AccountDetails.ui" beforeDir="false" afterPath="$PROJECT_DIR$/UI/AccountDetails.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SQL/banking_project_setup.sql" beforeDir="false" afterPath="$PROJECT_DIR$/SQL/banking_project_setup.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front_end.py" beforeDir="false" afterPath="$PROJECT_DIR$/front_end.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

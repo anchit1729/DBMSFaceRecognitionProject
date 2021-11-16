@@ -246,17 +246,26 @@ class AccountDetails(QMainWindow):
         day = self.day.text()
         month = self.month.text()
         year = self.year.text()
-        amount = float(self.amount.text())
+        if not self.amount.text() or len(self.amount.text()) == 0:
+            amount = None
+        else:
+            amount = float(self.amount.text())
         
         if time != QTime(0, 0):
-            self.target_account.transaction_list = [x for x in self.target_account.transaction_list if QTime(x.date_time.hour, x.date_time.minute) == time]
+            print(time)
+            print(QTime(self.target_account.transaction_list[0].date_time.hour, self.target_account.transaction_list[0].date_time.minute))
+            self.target_account.transaction_list = [x for x in self.target_account.transaction_list if f"{QTime(x.date_time.hour, x.date_time.minute)}" == f"{time}"]
         if day:
-            self.target_account.transaction_list = [x for x in self.target_account.transaction_list if f"{x.date_time.day:02}" == day]
+            print(day)
+            self.target_account.transaction_list = [x for x in self.target_account.transaction_list if f"{x.date_time.day:02}" == f"{day}"]
         if month:
-            self.target_account.transaction_list = [x for x in self.target_account.transaction_list if f"{x.date_time.month:02}" == month]
+            print(month)
+            self.target_account.transaction_list = [x for x in self.target_account.transaction_list if f"{x.date_time.month:02}" == f"{month}"]
         if year:
-            self.target_account.transaction_list = [x for x in self.target_account.transaction_list if str(x.date_time.year) == year]
+            print(year)
+            self.target_account.transaction_list = [x for x in self.target_account.transaction_list if str(x.date_time.year) == f"{year}"]
         if amount:
+            print(amount)
             self.target_account.transaction_list = [x for x in self.target_account.transaction_list if f'{x.amount:.2f}' == f'{amount:.2f}']
         
         self.repaint_table(False)
