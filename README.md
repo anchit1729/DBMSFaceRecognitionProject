@@ -15,13 +15,13 @@ This is the implementation for the COMP3278 Introduction to Database Management 
 | Component         | Tools Used | Contributor(s)           |
 |-------------------|------------|--------------------------|
 | Face-ID           | Python     | NA                       |
-| UI                | PyQT5      | Kritik, Raghav, Abhigyan |
+| UI                | PyQT5      | Kritik, Raghav, Abhigyan, Ajay |
 | Database          | MySQL      | Anchit                   |
 | DB-UI Connections | Python     | Anchit, Raghav, Kritik   | 
 
 *******
 
-## Useage
+## Usage
 
 ### Environment
 
@@ -51,76 +51,49 @@ myconn = mysql.connector.connect(host="localhost", user="root", passwd="xxxxx", 
 
 ## Run
 
-### 1. Face Recognition
+### 1. Main GUI-Based Application
 
-#### 1.1 Collect Face Data
-```
-"""
-user_name = "Jack"   # the name
-NUM_IMGS = 400       # the number of saved images
-"""
-python face_capture.py
-```
-The camera will be activated and the captured images will be stored in `data/Jack` folder.      
-**Note:** Only one person’s images can be captured at a time.
+#### 1.1 Running the application
 
-#### 1.2 Train a Face Recognition Model
+Run the file `front_end.py` to start the application:
 ```
-python train.py
+python front_end.py
 ```
-`train.yml` and `labels.pickle` will be created at the current folder.
 
+#### 1.2 Login Page
 
+Once the application login window is open, there are multiple options:
+
+1. Login - You may enter your Login ID/User ID and Password into the text box and click 'Login' to authenticate and enter the application.
+2. Register Face - You may enter your Login ID/User ID and Password into the text box and click 'Register Face' to authenticate and enter the application. Note that it is NOT POSSIBLE to create a new Login ID/User ID and Password pair for this application. This models the real-world functioning of a bank, where you must possess an online-banking account to access the eKYC functions. It does not practically make sense for a user to create a new eKYC account without creating a new bank account by visiting the branch.
+3. Face Login - If you have already registered your face with login credentials, you may click on the Face-ID button in the center. This turns on the camera and once your face is recognised, you are logged into your account.
+
+#### 1.3 Dashboard
+
+On this page, all your basic account information is displayed, including your personal details as well as the details of the personal banker assigned to assist you. In addition, a tabular view of all your accounts is also available. You may click on individual accounts to open a new, detailed view for the account. On the top right is a logout button, which you may click to log out of the application. Closing the application window is also allowed.
+
+#### 1.4 Account Details
+
+On this page, a detailed view of the account is presented, with information such as account number, account type, currency and balance. In addition, another tabular view is provided that displays a list of transactions carried out with the account. At the bottom, there is a text field to enter a password to generate a PDF. This allows users to generate a PDF of their account summary. This PDF can either be sent to the registered email ID of the customer or downloaded to the root directory of this project. The transaction table also allows users to search transactions based on time, day, month, year and amount. As an engineering choice and to make table search simpler, we have decided to allocate the time 00:00:00 for server maintenance, which basically allows the system to ignore searched time values of 00:00:00. Finally, individual transactions may be clicked to open a new view containing a summary of the transaction.
+
+#### 1.5 Transaction Details
+
+On this page, a summary of the transaction is provided, including transaction type, transaction ID, transaction details (which describe sender/recipient information depending on whether the transaction is a debit or credit to the account), currency, amount and remarks. Similar to the Account Details view, individual transaction summaries may also be downloaded or sent via email as a PDF.
 
 ### 2. Database Design
 
-#### 2.1 Define Database
-**You need to** create tables in `facerecognition.sql`.      
-Here is a sample code for `Student`.
-```
-# Create TABLE 'Customer'
-CREATE TABLE `Customer` (
-  `customer_id` int NOT NULL,
-  `name` varchar(50) NOT NULL,
-  `login_time` time NOT NULL,
-  `login_date` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+There are two scripts provided for the database: `banking_project_setup.sql` and `data_dump.sql`. The first one is to create the tables as per our DB design while the second one is to populate the tables with custom-created data for demonstration and use.
 
-LOCK TABLES `Customer` WRITE;
-/*!40000 ALTER TABLE `Customer` DISABLE KEYS */;
-INSERT INTO `Customer` VALUES (1, "JACK", NOW(), '2021-09-01');
-/*!40000 ALTER TABLE `Customer` ENABLE KEYS */;
-UNLOCK TABLES;
+#### 2.1 Import Database
+Open mysql server and import the files `banking_project_setup.sql` and `data_dump.sql`, in exactly that order.
 ```
-
-#### 2.2 Import Database
-Open mysql server and import the file `facerecognition.sql`.
-```
-# login the mysql command
+# login to the mysql prompt
 mysql -u root -p
 
-# create database.  'mysql>' indicates we are now in the mysql command line
-mysql> CREATE DATABASE facerecognition;
-mysql> USE facerecognition;
-
 # import from sql file
-mysql> source facerecognition.sql
+mysql> source banking_project_setup.sql
+mysql> source data_dump.sql
 ```
 
 
-
-### 3. Login Interface
-
-#### 3.1 OpenCV GUI
-```
-python faces.py
-```
-
-#### 3.2 PySimpleGUI GUI
-```
-python faces_gui.py
-```
-
-The camera will be activated and recognize your face using the pretrained model.    
-**You need to** implement other useful functions in this part.
 
