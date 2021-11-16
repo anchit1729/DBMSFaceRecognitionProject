@@ -348,7 +348,8 @@ def get_password(login_id):
         return None
     return result[0]
 
-
+# Just a basic function to allow testing of the DB backend separately from the UI.
+# DO NOT RUN THIS! Use front_end.py to run the actual application instead!
 def main_menu(customer):
     print('Select an option: ')
     print('1. Print Customer Profile')
@@ -380,7 +381,8 @@ def main_menu(customer):
         return False
     return True
 
-
+# Just a basic program to allow testing the DB backend without the UI.
+# DO NOT RUN THIS! Run front_end.py to use the actual application instead!
 def main():
     # Ask for user login
     print('Welcome to Best Bank iKYC!')
