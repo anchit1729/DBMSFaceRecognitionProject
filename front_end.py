@@ -11,7 +11,7 @@ from dbutils import Account, Banker, Customer, Transaction, Branch
 import fpdf
 from copy import deepcopy 
 import pdfprinting as pp
-
+from sys import platform
 
 
 
@@ -19,7 +19,10 @@ class LoginScreen(QDialog):
 
     def __init__(self):
         super(LoginScreen, self).__init__()
-        loadUi("UI/Login.ui", self)
+        if platform == 'win32':
+            loadUi("UI/windows_login.ui", self)
+        else:
+            loadUi("UI/Login.ui", self)
         self.faceid.clicked.connect(self.go_to_faceid)
         self.register_label.clicked.connect(self.go_to_register)
         self.login.clicked.connect(self.go_to_dashboard)
@@ -67,7 +70,10 @@ class LoginScreen(QDialog):
 class Dashboard(QMainWindow):
     def __init__(self, customer, banker):
         super(Dashboard, self).__init__()
-        loadUi("UI/Dashboard.ui", self)
+        if platform == 'win32':
+            loadUi("UI/windows_Dashboard.ui", self)
+        else:
+            loadUi("UI/Dashboard.ui", self)
         
         widget.addWidget(self)
         widget.setCurrentIndex(widget.currentIndex() + 1)
@@ -122,7 +128,10 @@ class Dashboard(QMainWindow):
 class AccountDetails(QMainWindow):
     def __init__(self, customer, account_id):
         super(AccountDetails, self).__init__()
-        loadUi("UI/AccountDetails.ui", self)
+        if platform == 'win32':
+            loadUi("UI/windows_AccountDetails.ui", self)
+        else:
+            loadUi("UI/AccountDetails.ui", self)
         
         widget.addWidget(self)
         widget.setCurrentIndex(widget.currentIndex() + 1)
@@ -321,7 +330,10 @@ class AccountDetails(QMainWindow):
 class TransactionDetails(QMainWindow):
     def __init__(self, customer, account_id, transaction_id):
         super(TransactionDetails, self).__init__()
-        loadUi("UI/TransactionDetails.ui", self)
+        if platform == 'win32':
+            loadUi("UI/windows_TransactionDetails.ui", self)
+        else:
+            loadUi("UI/TransactionDetails.ui", self)
         
         widget.addWidget(self)
         widget.setCurrentIndex(widget.currentIndex() + 1)
