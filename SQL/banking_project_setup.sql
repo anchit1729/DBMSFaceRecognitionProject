@@ -11,7 +11,7 @@ USE `banking_application`;
 CREATE TABLE Branch
 (
   branch_id CHAR(5) NOT NULL,
-  branch_address VARCHAR(50) NOT NULL,
+  branch_street_address VARCHAR(50) NOT NULL,
   branch_city VARCHAR(32) NOT NULL,
   branch_state VARCHAR(32),
   branch_country VARCHAR(32) NOT NULL,
@@ -44,7 +44,7 @@ CREATE TABLE Customer
   contact_no_1 VARCHAR(15) NOT NULL,
   contact_no_2 VARCHAR(15),
   email VARCHAR(50) NOT NULL,
-  address VARCHAR(50) NOT NULL,
+  street_address VARCHAR(50) NOT NULL,
   address_city VARCHAR(32) NOT NULL,
   address_state VARCHAR(32),
   address_country VARCHAR(32) NOT NULL,

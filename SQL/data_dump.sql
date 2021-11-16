@@ -1,4 +1,4 @@
-Insert Into Branch (branch_id,branch_address,branch_city,branch_state,branch_country,branch_postcode)
+Insert Into Branch (branch_id,branch_street_address,branch_city,branch_state,branch_country,branch_postcode)
 VALUES
 ('H1001','9 Maine Street, Central','Hong Kong','','Hong Kong SAR','999077'),
 ('H1002','Times Square, Causeway Bay','Hong Kong','','Hong Kong SAR','999077'),
@@ -13,7 +13,7 @@ VALUES
 ('B1004','H1003','Jess','Ableton','1989-02-22','2018-09-24','+852 2853 5739','jess@bank.com'),
 ('B1005','H1004','Reese','Richards','1990-01-05','2020-07-20','+852 4398 9781','reese@bank.com');
 
-Insert into Customer (customer_id,salutation,first_name,last_name,date_of_birth,contact_no_1,contact_no_2,email,address,address_city,address_state,address_country,address_post_code,banker_id)
+Insert into Customer (customer_id,salutation,first_name,last_name,date_of_birth,contact_no_1,contact_no_2,email,street_address,address_city,address_state,address_country,address_post_code,banker_id)
 Values
 ('CUST10001','Mr','Anchit','Mishra','2000-05-15','+854 5376 0021','+852 2315 0069','anchit@connect.hku.hk','A2012 JCSV-III','Hong Kong','','Hong Kong SAR','999077','B1001'),
 ('CUST10002','Mr','Abhigyan','Kashyap','2001-05-14','+854 6734 6242','','abhigyan@connect.hku.hk','34A T Tower','Hong Kong','','Hong Kong SAR','999077','B1002'),

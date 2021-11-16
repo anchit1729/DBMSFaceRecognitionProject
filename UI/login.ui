@@ -280,7 +280,7 @@ background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgb
 }</string>
     </property>
     <property name="text">
-     <string>REGISTER</string>
+     <string>REGISTER FACE</string>
     </property>
    </widget>
    <widget class="QLabel" name="error">
