@@ -41,10 +41,10 @@ pip install -r requirements.txt
 [Windows](https://dev.mysql.com/doc/mysql-installation-excerpt/5.7/en/windows-installation.html)
 
 You'll obtain an account and password after installation, then you should modify the `faces.py`, with the corresponding
-`user` and `passwd`:
+`user` and `passwd`. Similarly, the dbutils.py file should be modified accordingly to ensure proper connectivity with the MySQL database:
 ```
 # create database connection
-myconn = mysql.connector.connect(host="localhost", user="root", passwd="xxxxx", database="facerecognition")
+myconn = mysql.connector.connect(host="localhost", user="root", passwd="xxxxx", database="banking_application")
 ```
 
 *******
