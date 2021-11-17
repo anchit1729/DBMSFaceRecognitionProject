@@ -53,6 +53,8 @@ myconn = mysql.connector.connect(host="localhost", user="root", passwd="xxxxx", 
 
 ### 1. Main GUI-Based Application
 
+NOTE: This application was primarily developed on a 13 inch Macbook Pro system with macOS 12.0.1 Monterey. As a result, the screen resolutions and GUI layouts are best viewed on the macOS platform. However, we have tried to accomodate Windows users by implementing separate UI files for Windows PCs.
+
 #### 1.1 Running the application
 
 Run the file `front_end.py` to start the application:
