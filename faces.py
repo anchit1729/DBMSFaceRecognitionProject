@@ -10,7 +10,7 @@ def faces():
     import sys
 
     # 1 Create database connection
-    myconn = mysql.connector.connect(host="localhost", user="root", passwd="Raghav@2001", database="banking_application")
+    myconn = mysql.connector.connect(host="localhost", user="root", passwd="root1234", database="banking_application")
     date = datetime.utcnow()
     now = datetime.now()
     current_time = now.strftime("%H:%M:%S")

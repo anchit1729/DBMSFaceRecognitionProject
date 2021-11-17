@@ -1,10 +1,112 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="68530535-d220-4f1e-9fdb-33e5111edee8" name="Default Changelist" comment="Minor fixes (3)">
+    <list default="true" id="68530535-d220-4f1e-9fdb-33e5111edee8" name="Default Changelist" comment="Minor fixes (5) - I think this is the final one">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SQL/banking_project_setup.sql" beforeDir="false" afterPath="$PROJECT_DIR$/SQL/banking_project_setup.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front_end.py" beforeDir="false" afterPath="$PROJECT_DIR$/front_end.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000001.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000002.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000003.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000004.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000005.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000006.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000007.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000008.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000009.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000010.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000011.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000012.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000013.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000014.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000015.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000016.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000017.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000018.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000019.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000020.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000021.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000022.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000023.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000024.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000025.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000026.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000027.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000028.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000029.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000030.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000031.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000032.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000033.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000034.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000035.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000036.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000037.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000038.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000039.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000040.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000041.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000042.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000043.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000044.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000045.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000046.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000047.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000048.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000049.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000050.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000051.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000052.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000053.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000054.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000055.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000056.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000057.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000058.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000059.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000060.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000061.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000062.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000063.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000064.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000065.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000066.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000067.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000068.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000069.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000070.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000071.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000072.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000073.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000074.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000075.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000076.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000077.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000078.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000079.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000080.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000081.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000082.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000083.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000084.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000085.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000086.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000087.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000088.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000089.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000090.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000091.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000092.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000093.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000094.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000095.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000096.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000097.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000098.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000099.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/marwadi3000/marwadi3000100.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dbutils.py" beforeDir="false" afterPath="$PROJECT_DIR$/dbutils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/faces.py" beforeDir="false" afterPath="$PROJECT_DIR$/faces.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/labels.pickle" beforeDir="false" afterPath="$PROJECT_DIR$/labels.pickle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/train.yml" beforeDir="false" afterPath="$PROJECT_DIR$/train.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,7 +116,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="dev" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -105,6 +207,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.front_end" />
+        <item itemvalue="Python.tutorial1" />
+        <item itemvalue="Python.dbutilityfunctions" />
         <item itemvalue="Python.tutorial1" />
         <item itemvalue="Python.dbutilityfunctions" />
       </list>
