@@ -41,7 +41,7 @@ pip install -r requirements.txt
 [Windows](https://dev.mysql.com/doc/mysql-installation-excerpt/5.7/en/windows-installation.html)
 
 You'll obtain an account and password after installation, then you should modify the `faces.py`, with the corresponding
-`user` and `passwd`. Similarly, the dbutils.py file should be modified accordingly to ensure proper connectivity with the MySQL database:
+`user` and `passwd`. Similarly, the `dbutils.py` file should be modified accordingly to ensure proper connectivity with the MySQL database:
 ```
 # create database connection
 myconn = mysql.connector.connect(host="localhost", user="root", passwd="xxxxx", database="banking_application")
@@ -54,6 +54,8 @@ myconn = mysql.connector.connect(host="localhost", user="root", passwd="xxxxx", 
 ### 1. Main GUI-Based Application
 
 NOTE: This application was primarily developed on a 13 inch Macbook Pro system with macOS 12.0.1 Monterey. As a result, the screen resolutions and GUI layouts are best viewed on the macOS platform. However, we have tried to accomodate Windows users by implementing separate UI files for Windows PCs.
+
+The primary code files written by us for the project include `front_end.py`, `dbutils.py` and `pdfprinting.py`.  The remaining files are part of the training backend provided and have not been significantly modified.
 
 #### 1.1 Running the application
 
