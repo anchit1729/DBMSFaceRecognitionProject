@@ -211,15 +211,6 @@
           </color>
          </brush>
         </colorrole>
-        <colorrole role="PlaceholderText">
-         <brush brushstyle="NoBrush">
-          <color alpha="128">
-           <red>255</red>
-           <green>255</green>
-           <blue>255</blue>
-          </color>
-         </brush>
-        </colorrole>
        </active>
        <inactive>
         <colorrole role="WindowText">
@@ -276,15 +267,6 @@
           </color>
          </brush>
         </colorrole>
-        <colorrole role="PlaceholderText">
-         <brush brushstyle="NoBrush">
-          <color alpha="128">
-           <red>255</red>
-           <green>255</green>
-           <blue>255</blue>
-          </color>
-         </brush>
-        </colorrole>
        </inactive>
        <disabled>
         <colorrole role="WindowText">
@@ -338,15 +320,6 @@
            <red>0</red>
            <green>0</green>
            <blue>0</blue>
-          </color>
-         </brush>
-        </colorrole>
-        <colorrole role="PlaceholderText">
-         <brush brushstyle="NoBrush">
-          <color alpha="128">
-           <red>255</red>
-           <green>255</green>
-           <blue>255</blue>
           </color>
          </brush>
         </colorrole>
@@ -639,7 +612,7 @@ border-radius:20px;</string>
      <property name="font">
       <font>
        <family>MS Shell Dlg 2</family>
-       <pointsize>14</pointsize>
+       <pointsize>12</pointsize>
        <weight>50</weight>
        <italic>false</italic>
        <bold>false</bold>
@@ -650,7 +623,7 @@ border-radius:20px;</string>
      </property>
      <property name="styleSheet">
       <string notr="true">color: white;
-font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
+font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
      </property>
      <property name="text">
       <string>Phone Number: 67852 74292</string>
@@ -674,7 +647,7 @@ font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
      <property name="font">
       <font>
        <family>MS Shell Dlg 2</family>
-       <pointsize>14</pointsize>
+       <pointsize>12</pointsize>
        <weight>50</weight>
        <italic>false</italic>
        <bold>false</bold>
@@ -685,7 +658,7 @@ font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
      </property>
      <property name="styleSheet">
       <string notr="true">color: white;
-font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
+font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
      </property>
      <property name="text">
       <string>Address: 1209, Schrute Farms, Scranton, PA.</string>
@@ -709,7 +682,7 @@ font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
      <property name="font">
       <font>
        <family>MS Shell Dlg 2</family>
-       <pointsize>14</pointsize>
+       <pointsize>12</pointsize>
        <weight>50</weight>
        <italic>false</italic>
        <bold>false</bold>
@@ -720,7 +693,7 @@ font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
      </property>
      <property name="styleSheet">
       <string notr="true">color: white;
-font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
+font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
      </property>
      <property name="text">
       <string>Email ID: schrutefarms@dundermifflin.com</string>
@@ -744,7 +717,7 @@ font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
      <property name="font">
       <font>
        <family>MS Shell Dlg 2</family>
-       <pointsize>14</pointsize>
+       <pointsize>12</pointsize>
        <weight>50</weight>
        <italic>false</italic>
        <bold>false</bold>
@@ -755,7 +728,7 @@ font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
      </property>
      <property name="styleSheet">
       <string notr="true">color: white;
-font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
+font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
      </property>
      <property name="text">
       <string>Name: Dwight K. Schrute</string>
@@ -1120,7 +1093,7 @@ background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgb
      <property name="font">
       <font>
        <family>MS Shell Dlg 2</family>
-       <pointsize>14</pointsize>
+       <pointsize>12</pointsize>
        <weight>50</weight>
        <italic>false</italic>
        <bold>false</bold>
@@ -1131,7 +1104,7 @@ background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgb
      </property>
      <property name="styleSheet">
       <string notr="true">color: white;
-font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
+font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
      </property>
      <property name="text">
       <string>Name: Dwight K. Schrute</string>
